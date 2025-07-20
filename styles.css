@@ -1,0 +1,45 @@
+/* Make sure the whole figure is centered */
+figure {
+  display: block;
+  margin: 2em auto;
+  text-align: center;
+}
+
+/* 1. Figure number: bold, above everything, single‑spaced */
+figure > .figure-number {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5em;
+  line-height: 1.2;      /* approx single‑spacing */
+}
+
+/* 2. Figure title: italic, title case, double‑spaced below number */
+figure > .figure-title {
+  font-style: italic;
+  display: block;
+  margin-bottom: 1em;    /* roughly one double‑spaced line */
+  line-height: 2;
+}
+
+/* 3. The image itself */
+figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* 4. Legend (if you include one inside the figure) */
+figure .figure-legend {
+  font-family: sans-serif;
+  font-size: 0.9em;      /* between 8–14pt */
+  text-align: center;
+  margin: 0.5em auto;
+}
+
+/* 5. Figure note: smaller, left‑aligned, below everything */
+figure > .figure-note {
+  display: block;
+  margin-top: 1em;
+  font-size: 0.8em;
+  text-align: left;
+  line-height: 1.2;}
