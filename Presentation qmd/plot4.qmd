@@ -1,0 +1,124 @@
+---
+title: "Immigration and Crime: An International Perspective"
+bibliography: references.bib
+csl: "https://www.zotero.org/styles/apa"
+---
+
+Figure 4 Summary of Estimates of the Impact of Immigration on Crime
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load necessary package
+# Tidyverse Includes ggplot2, dplyr, etc.
+if (!requireNamespace("pacman", quietly = TRUE)) install.packages("pacman")
+pacman::p_load(haven, dplyr, tidyr, ggplot2, scales, ggrepel, patchwork, tidyverse, ggh4x)
+
+# Create the data 
+data_for_plot <- tribble(
+  ~Study, ~Type, ~Category, ~Estimate, ~LowerCI, ~UpperCI,
+  "BBP, 2012\nItaly", "OLS", "Property", 0.084, 0.02912, 0.13888,
+  "BBP, 2012\nItaly", "Shift share", "Property", 0.046, -0.248, 0.34,
+
+  "BFM, 2013\nUnited Kingdom", "OLS", "Property", -0.061, -0.125, 0.003,
+  "BFM, 2013\nUnited Kingdom", "Shift share", "Property", -0.386, -0.54476, -0.22724,
+
+  "SPE, 2014\nUnited States", "OLS", "Property", 0.123, 0.00344, 0.24256,
+  "SPE, 2014\nUnited States", "Shift share", "Property", 0.108, -0.13112, 0.34712,
+
+  "ADU, 2021\nChile", "OLS", "Property", 0.01, -0.0096, 0.0296,
+  "ADU, 2021\nChile", "Shift share", "Property", 0, -0.0784, 0.0784,
+
+  "BBP, 2012\nItaly", "OLS", "Violent", 0.003, -0.16164, 0.16764,
+  "BBP, 2012\nItaly", "Shift share", "Violent", -0.036, -0.312556, 0.240556,
+
+  "BFM, 2013\nUnited Kingdom", "OLS", "Violent", -0.007, -0.0364, 0.0224,
+  "BFM, 2013\nUnited Kingdom", "Shift share", "Violent", -0.074, -0.26216, 0.11416,
+
+  "SPE, 2014\nUnited States", "OLS", "Violent", 0.065, -0.05848, 0.18848,
+  "SPE, 2014\nUnited States", "Shift share", "Violent", 0.01, -0.29184, 0.31184,
+
+  "ADU, 2021\nChile", "OLS", "Violent", 0, -0.0196, 0.0196,
+  "ADU, 2021\nChile", "Shift share", "Violent", 0.02, -0.0192, 0.0592
+)
+
+# Ensure 'Study' is ordered correctly for plotting
+data_for_plot$Study <- factor(data_for_plot$Study,
+                              levels = c("ADU, 2021\nChile",
+                                         "SPE, 2014\nUnited States",
+                                         "BFM, 2013\nUnited Kingdom",
+                                         "BBP, 2012\nItaly"))
+
+# Ensure 'Type' is a factor with OLS ordered before Shift share for dodging control
+data_for_plot$Type <- factor(data_for_plot$Type,
+                             levels = c("OLS", "Shift share"))
+
+# Define a common dodging position to slightly offset the lines vertically
+dodge_pos <- position_dodge(width = -0.4) # Negative width to put OLS above Shift Share
+
+ggplot(data_for_plot, aes(y = Study, x = Estimate, color = Type)) +
+  # Add horizontal error bars for confidence intervals
+  geom_errorbarh(aes(xmin = LowerCI, xmax = UpperCI, linetype = Type),
+                 height = 0.2, # Controls the vertical thickness of the bar
+                 position = dodge_pos, # Use the defined dodging position
+                 linewidth = 0.5) +
+  # Add points for the estimates
+  geom_point(aes(shape = Type),
+             size = 2, # Size of the point
+             position = dodge_pos) +
+  # Add text labels for estimates
+  geom_text(aes(label = scales::label_number(accuracy = 0.001, trim = TRUE)(Estimate), # <<-- KEY CHANGE
+                group = Type, # Group by Type for dodging
+                # Adjust vertical position (vjust) based on Type
+                vjust = ifelse(Type == "OLS", -1, 2) # OLS text above, Shift share text below
+                ),
+            position = dodge_pos, # Apply the same dodge as points/errorbars
+            hjust = 0.5, # Center text horizontally on the point
+            size = 3, # Font size for the labels
+            color = "black") + # Ensure text is black
+  # Add a vertical line at x = 0 (no effect)
+  geom_vline(xintercept = 0, linetype = "solid", color = "firebrick", linewidth = 0.5) +
+  # Facet by Category (Property vs. Violent) with independent x-axes
+  facet_wrap2(~ Category, scales = "free_x", axes = "x") +
+
+  # Use facetted_pos_scales from ggh4x to set different x-axis scales per facet
+  facetted_pos_scales(
+    x = list(
+      Category == "Property" ~ scale_x_continuous(
+        limits = c(-0.6, 0.4),
+        breaks = seq(-0.6, 0.4, by = 0.2),
+        labels = scales::number_format(accuracy = 0.1)
+      ),
+      Category == "Violent" ~ scale_x_continuous(
+        limits = c(-0.4, 0.4),
+        breaks = seq(-0.4, 0.4, by = 0.2),
+        labels = scales::number_format(accuracy = 0.1)
+      )
+    )
+  ) +
+
+  # Customize scales, labels, and theme
+  scale_shape_manual(values = c("OLS" = 1, "Shift share" = 4)) +
+  scale_color_manual(values = c("OLS" = "black", "Shift share" = "black")) +
+  scale_linetype_manual(values = c("OLS" = "solid", "Shift share" = "dotted")) +
+  labs(
+    title = "Summary of Estimates of the Impact of Immigration on Crime",
+    y = NULL,
+    x = NULL,
+    color = "Type",
+    shape = "Type"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+    axis.text.y = element_text(size = 9),
+    axis.text.x = element_text(size = 9),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_line(linetype = "dotted", color = "gray80"),
+    panel.grid.minor.x = element_blank(),
+    strip.text = element_text(size = 12, face = "bold"),
+    plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")
+  )
+```

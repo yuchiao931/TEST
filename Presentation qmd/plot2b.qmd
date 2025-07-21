@@ -1,0 +1,193 @@
+---
+title: "Figure 2"
+bibliography: references.bib
+csl: "https://www.zotero.org/styles/apa"
+---
+
+Figure 2 Immigration and Homicides in 55 Countries, 1990–2019
+
+```{r echo=FALSE, eval=FALSE}
+if (!dir.exists("Fig")) {dir.create("Fig")}
+```
+
+```{r setup, include=FALSE}
+# CRAN Mirror & Install p_load
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+if (!requireNamespace("pacman", quietly=TRUE)) install.packages("pacman")
+pacman::p_load(
+  haven, dplyr, tidyr, WDI, countrycode,
+  ggplot2, ggrepel, scales
+)
+# Reading in raw Stata data
+df <- read_dta("/cloud/project/Immi_Crime/data/cross_country_data_homicide_migration.dta")
+```
+
+```{r echo=FALSE, eval=FALSE}
+#Inspect the data
+head(df)# Print the first few rows
+names(df)# Show column names
+```
+
+```{r ts-plot, echo=FALSE, eval=FALSE, fig.cap="Migration share and homicide rate, population-weighted by WB total population"}
+
+library(WDI)
+library(dplyr)
+library(countrycode)
+library(scales)
+library(ggplot2)
+```
+
+```{r, iso-country-list, warning=FALSE, message=FALSE, error=FALSE, echo=FALSE}
+iso3c_vec <- c(
+  "ARM","AUS","AUT","AZE","BGR","BIH","BLR","BRA","CAN","CHE","COL","CRI",
+  "DEU","DNK","ECU","ESP","EST","FIN","FRA","GBR","GEO","GRC","HKG","HND",
+  "HRV","IND","IRL","ITA","JAM","JPN","KGZ","KOR","LKA","LTU","MAR","MDA",
+  "MEX","MUS","NLD","NOR","PAK","PAN","PHL","POL","PRI","PRT","ROU","RUS",
+  "SGP","SVK","SVN","SWE","URY","USA","VEN"
+) 
+
+# 1) Filter population
+wb_pop_ts <- WDI(
+    country   = "all",
+    indicator = "SP.POP.TOTL",
+    start     = 1990,
+    end       = 2019,
+    extra     = TRUE
+  ) %>%
+  filter(region != "Aggregates") %>%
+  # generate iso3c
+  mutate(code = countrycode(iso2c, "iso2c", "iso3c")) %>%
+  # Keep the select countries
+  filter(code %in% iso3c_vec) %>%
+  select(code, year, pop_total = SP.POP.TOTL)
+
+# 2) Combine and calculate weighted indicators
+ts_df <- df %>%
+  left_join(wb_pop_ts, by = c("code","year")) %>%
+  group_by(year) %>%
+  summarise(
+    migr_w = sum(migr_pop * pop_total, na.rm = TRUE) / sum(pop_total, na.rm = TRUE),
+    hom_w  = sum(homicide_rate * pop_total, na.rm = TRUE) / sum(pop_total, na.rm = TRUE)
+  )
+
+# 3) Calculate proportions and draw
+sf <- max(ts_df$hom_w) / max(ts_df$migr_w)
+```
+
+```{r echo=FALSE, include=FALSE}
+df %>%
+  filter(code %in% iso3c_vec) %>%
+  group_by(year) %>%
+  summarise(n_country = n_distinct(code))
+```
+
+```{r, echo=FALSE, include=FALSE}
+wb_pop_ts %>%
+  filter(code=="USA", year %in% c(1990, 2000, 2010, 2019))
+# These pop_total should be officially
+#   1990 ~ 248 million
+#   2000 ~ 282 million
+#   2010 ~ 309 million
+#   2019 ~ 328 million
+```
+
+```{r fig2-bottom-wb-selected, message=FALSE, warning=FALSE, echo=FALSE}
+# Install the package
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(ggrepel)
+library(WDI)
+library(countrycode)
+
+```
+
+```{r echo=FALSE, include=FALSE}
+iso3_codes <- c(
+  "ARM","AUS","AUT","AZE","BGR","BIH","BLR","BRA","CAN","CHE","COL","CRI",
+  "DEU","DNK","ECU","ESP","EST","FIN","FRA","GBR","GEO","GRC","HKG","HND",
+  "HRV","IND","IRL","ITA","JAM","JPN","KGZ","KOR","LKA","LTU","MAR","MDA",
+  "MEX","MUS","NLD","NOR","PAK","PAN","PHL","POL","PRI","PRT","ROU","RUS",
+  "SGP","SVK","SVN","SWE","URY","USA","VEN"
+)
+
+# 2) Filter out 1990 & 2019 from df (the complete data frame read_dta() previously)
+df2 <- df %>%
+  filter(code %in% iso3_codes,             # filter the 55 countries
+         year %in% c(1990, 2019)) %>%        # only 1990/2019
+  mutate(
+    ln_migr  = log(migr_pop),
+    ln_homic = log(homicide_rate)
+  )
+cat("df2 rows:", nrow(df2), "\n")
+print(head(df2))
+
+# 3) Get the total population from the World Bank
+# (first grab all years, then join and then pivot)
+wb_pop <- WDI(
+  country   = "all",
+  indicator = "SP.POP.TOTL",
+  start     = 1990,
+  end       = 2019,
+  extra     = TRUE
+) %>%
+  filter(region != "Aggregates") %>%
+  mutate(code = countrycode(iso2c, "iso2c", "iso3c")) %>%
+  select(code, year, pop_total = SP.POP.TOTL)
+
+# 4) Merge, widen, and calculate log-change
+df_sc <- df2 %>%
+  left_join(wb_pop, by = c("code","year")) %>%
+  select(code, year, ln_migr, ln_homic, pop_total) %>%  # ← 把 population、homicide_rate、migr_pop 全扔掉
+  pivot_wider(
+    names_from  = year,
+    values_from = c(ln_migr, ln_homic, pop_total),
+    names_sep   = "_"
+  ) %>%
+  mutate(
+    dln_migr  = ln_migr_2019  - ln_migr_1990,
+    dln_homic = ln_homic_2019 - ln_homic_1990
+  ) %>%
+  filter(!is.na(pop_total_1990))
+  
+```
+
+```{r, echo=FALSE, include=FALSE}
+# 5) Check the amout of rows of data
+cat("Rows to plot:", nrow(df_sc), "\n")
+```
+
+```{r echo=FALSE,include=FALSE}
+df_tmp <- df2 %>%
+  left_join(wb_pop, by = c("code","year")) %>%
+  pivot_wider(
+    names_from  = year,
+    values_from = c(ln_migr, ln_homic, pop_total),
+    names_sep   = "_"
+  )
+print(head(df_tmp))# check the rows after pivot
+cat("Rows after pivot:", nrow(df_tmp), "\n")
+```
+
+```{r echo=FALSE, include=FALSE}
+with(df_sc, summary(dln_migr))
+with(df_sc, summary(dln_homic))
+```
+
+```{r, echo=FALSE, message=FALSE}
+library(ggplot2)
+library(ggrepel)
+
+ggplot(df_sc, aes(x = dln_migr, y = dln_homic)) +
+  geom_point(shape = 21, fill = NA, color = "black") +
+  geom_text_repel(aes(label = code), size = 3) +
+  geom_smooth(method = "lm",
+              se     = FALSE,
+              aes(weight = pop_total_1990)) +
+  theme_minimal(base_size = 12) +
+  labs(
+    title = "Immigration and homicides (pop. weighted)",
+    x     = "Log change migration, 1990–2019",
+    y     = "Log change homicides, 1990–2019"
+  )
+```

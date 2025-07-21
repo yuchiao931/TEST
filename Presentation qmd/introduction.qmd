@@ -1,0 +1,14 @@
+---
+title: "Introduction"
+bibliography: references.bib
+csl: "https://www.zotero.org/styles/apa"
+---
+
+## Choosing a paper
+
+1.  Inside the Box: Safety, Health, and Isolation in Prison [@western2021]
+2.  Immigration and Crime: An International Perspective [@marie2024]
+
+The first one was written by an author who used R to do most of the work, so the professor suggested that we choose another one.
+
+This presentation is an reproducibility project of looking at two graphs from the paper Immigration and Crime: An International Perspective by the authors Olivier Marie and Paolo Pinotti [@marie2024].

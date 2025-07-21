@@ -1,0 +1,17 @@
+---
+title: "Immigration and Crime: An International Perspective"
+bibliography: references.bib
+csl: "https://www.zotero.org/styles/apa"
+---
+
+#Figure 2 Immigration and Homicides in 55 Countries, 1990–2019
+
+ΔYm,2017−2008​=βΔmigrm,2017−2008​+γϵmt​
+
+Δmigrm, 2017−2008​=∑n​θm,2008n​×ΔlnMIGR2017−2008n​
+
+θm,2008n​=∑n′​MIGRm,2008n′​MIGRm,2008n​​
+
+Some times more complicated graphs are not a good idea to replicate
+
+Ensure that the authors even make it possible for most people to replicate

@@ -1,0 +1,7 @@
+---
+title: "Immigration and Crime: An International Perspective"
+bibliography: references.bib
+csl: "https://www.zotero.org/styles/apa"
+---
+
+1.  [@marie2024] [@western2021] [@bell2013] [@spenkuch2013] [@ajzenman2023]
