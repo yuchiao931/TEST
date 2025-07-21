@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Yu-Chiao Tseng 400778357">
+<meta name="author" content="Tawanda Nhundu 400744073">
+
+<title>Replication Project for the paper Immigration and Crime: An International Perspective</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="Replication Report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Replication Report_files/libs/quarto-html/quarto.js"></script>
+<script src="Replication Report_files/libs/quarto-html/popper.min.js"></script>
+<script src="Replication Report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Replication Report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Replication Report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Replication Report_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Replication Report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Replication Report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Replication Report_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#motivation-for-replication" id="toc-motivation-for-replication" class="nav-link" data-scroll-target="#motivation-for-replication">Motivation for Replication</a></li>
+  <li><a href="#finding-a-paper" id="toc-finding-a-paper" class="nav-link" data-scroll-target="#finding-a-paper">Finding a paper</a></li>
+  <li><a href="#figure-2-top-replication-process" id="toc-figure-2-top-replication-process" class="nav-link" data-scroll-target="#figure-2-top-replication-process">Figure 2 Top Replication Process</a>
+  <ul class="collapse">
+  <li><a href="#discussion-on-figure-2-top" id="toc-discussion-on-figure-2-top" class="nav-link" data-scroll-target="#discussion-on-figure-2-top">Discussion on Figure 2 top</a></li>
+  </ul></li>
+  <li><a href="#figure-2-bottom-replication-process" id="toc-figure-2-bottom-replication-process" class="nav-link" data-scroll-target="#figure-2-bottom-replication-process">Figure 2 Bottom Replication Process</a></li>
+  <li><a href="#using-world-bank-population-data-as-weight" id="toc-using-world-bank-population-data-as-weight" class="nav-link" data-scroll-target="#using-world-bank-population-data-as-weight">Using World Bank population data as weight</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Replication Report.docx"><i class="bi bi-file-word"></i>MS Word (apaquarto)</a></li><li><a href="Replication Report.pdf"><i class="bi bi-file-pdf"></i>Typst (apaquarto)</a></li><li><a href="Replication-Report.pdf"><i class="bi bi-file-pdf"></i>PDF (apaquarto)</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Replication Project for the paper Immigration and Crime: An International Perspective</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Yu-Chiao Tseng 400778357 <a href="mailto:tseng.yu-chiao@stud.hs-fresenius.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Hochschule Fresenius
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Tawanda Nhundu 400744073 <a href="mailto:nhundu.tawanda@stud.hs-fresenius.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Hochschule Fresenius
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    This is a report of a replication study focusing on the paper titled Immigration and Crime: An International Perspective. It aims to authenticate the results of 2 figures of the authors by attempting to replicate using the programming language R.The replication process has been assisted by AI in code design with the final results to be published on GitHub.This report will cover all the steps to complete the report, the codes used and the problems encountered during the replication.
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>The goal of this project is to conduct a replication study. Our group selected the paper from Olivier Marie and Paolo Pinotti (2024) which explored the association between immigration and crime in the Journal of Economic Perspectives. They found that an increase in the share of immigrants was not accompanied by an increase in the global murder rate.</p>
+<p>We will discuss more detail the process of finding papers, how we used R to complete this replication study, the challenges we encountered, and how we published our report on GitHub. Lastly, we will summarize the learning process.</p>
+</section>
+<section id="motivation-for-replication" class="level1">
+<h1>Motivation for Replication</h1>
+<p>Academic research nowadays values transparency and credibility, and replication studies are an important way to verify these.There are some researchers manipulate data to achieve the results they want, and replication studies can confirm that the author’s research results are not accidental or the result of incorrect analysis method. The importance of research in science and academic knowledge is self-evident. According to Bouter &amp; ter Riet (2021) replication is divided into three different levels. First, reanalysis of the original study by re‑running their exact code and dataset, to verify that the published figures and tables can be fully reproduced. The second one is direct replication which means replicate with new data but the same research protocol. The third one is conceptual replication, researchers use new data with the modified research protocol and same research question. In the project I think we did re‑analysis, we used the data provided by the authors and the same data analysis plan.Using the world bank data as weight can be a conceptual replication. Bouter &amp; ter Riet mentioned that by varying data sources or methods, conceptual replications can reveal whether a finding can be use in different context and proof it validity and generalizability. In contrast, reanalyses or direct replications which rely on the same dataset or same procedures might reproduce the flaws that were present in the original study.</p>
+<p><span class="citation" data-cites="bouter2021a">(<a href="#ref-bouter2021a" role="doc-biblioref">Bouter and Riet 2021</a>)</span></p>
+</section>
+<section id="finding-a-paper" class="level1">
+<h1>Finding a paper</h1>
+<p>We selected two papers, “Inside the Box” and “Immigration and Crime” at the beginning. The first one was written by an author who used R to do most of his work, so the professor suggested that we choose another one. In the article “Immigration and Crime”, the author used Stata for coding. The article explored the relationship between immigration and crime. Living abroad as students, we felt that the increase in immigration in many countries in recent years has brought benefits such as filling the labor gap in developed countries, but it has also caused many conflicts between immigrants and locals. Many people believe that immigrants cause public security problems and have low tolerance for them. Seeing this trend, enhanced our interest in this topic, and we hope to learn more about the content of the article and how the author conducts statistical analysis and explores this issue.</p>
+<p>The authors Olivier Marie and Paolo Pinotti cleaned, merged, and statistically analyzed the United Nations’ immigration and crime data to explore whether there is a significant correlation between immigration and crime. They also referred to other studies to further explore whether obtaining legal status reduces the tendency to commit crimes. We chose Figure 2 and Figure 4 for replication. First, we read the author’s README file and Stata code to confirm the feasibility and verify whether the data set can be accessed from the websites they provided.</p>
+</section>
+<section id="figure-2-top-replication-process" class="level1">
+<h1>Figure 2 Top Replication Process</h1>
+<p>Figure 2 is composed of two figures, the first one is a double y-axis graph, showing the long-term trend of the “proportion of immigrants to the total population” gray line and the “murder rate” blue line in 55 countries (1990-2019). The second figure is a scatter plot, showing how much the “number of immigrants” in each country changed from 1990 to 2019 and how much the “murder rate” changed during the same period (calculated in logarithms).</p>
+<div id="fig:original">
+<p><strong>Figure&nbsp;1.</strong><br>
+<em>Original graph of Figure&nbsp;2</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/Original.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+<p><span class="citation" data-cites="marie2024">(<a href="#ref-marie2024" role="doc-biblioref">Marie and Pinotti 2024</a>)</span></p>
+<div>
+<p><strong>Figure&nbsp;2.</strong><br>
+<em>Original Stata code for Figure 2 top</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/statatop.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+<p>This part relies on chatgpt’s explanation to understand the meaning of each code collapse homic migr [aw=pop1990], by(year) is grouped by year, and the variables homic and migr are weighted averaged (weight is pop1990), Two-way connected plot is a two-line graph, connected migr year, color(gs8) msymbol(circle_hollow) draws the first line (left Y axis), connected homicide_rate year, color(blue) msymbol(triangle_hollow) yaxis(2) draws the second line (right Y axis). Then I created a new file in R and saved the data provided by the author.</p>
+<p>ChatGPT guided me step by step to reproduce this grpah in R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results-pdf: "hide"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Install pacman if necessary, then use it to install/load everything</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"pacman"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  knitr,        <span class="co"># R Markdown engine</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  rmarkdown,    <span class="co"># document rendering</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  papaja,       <span class="co"># APA‐style support (optional)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  haven,        <span class="co"># read/write Stata/SAS/SPSS</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  dplyr,        <span class="co"># data wrangling</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  tidyr,        <span class="co"># data reshaping</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  ggplot2,      <span class="co"># plotting</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  scales,       <span class="co"># axis formatting</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  ggrepel       <span class="co"># non‐overlapping text labels</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Read the Stata dataset</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"DATA/cross_country_data_homicide_migration.dta"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 3.Inspect the data</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Print the first few rows</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># head(df)</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Show column names</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># names(df)</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Count the number of rows</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># nrow(df)</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Compute population‐weighted time series</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>ts <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Weighted average of migrant stock over population</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="at">migr_w =</span> <span class="fu">sum</span>(migr_pop <span class="sc">*</span> pop1990) <span class="sc">/</span> <span class="fu">sum</span>(pop1990),</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Weighted average of homicide rate</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="at">hom_w =</span> <span class="fu">sum</span>(homicide_rate <span class="sc">*</span> pop1990) <span class="sc">/</span> <span class="fu">sum</span>(pop1990)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Confirm ts were created correctly</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># head(ts)</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co"># str(ts)</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co"># See a small data frame with columns year, migr_w, and hom_w.</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Draw the dual-axis time-series plot</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ts, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Left axis: gray line + hollow circles = migrant share</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> migr_w), <span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> migr_w), <span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Right axis: blue line + hollow triangles = homicide rate</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> hom_w), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hom_w), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="dv">24</span>) <span class="sc">+</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a secondary y‐axis for homicide rate</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="at">name =</span> <span class="st">"Stock of migrants over population"</span>,</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> ., <span class="at">name =</span> <span class="st">"Homicide rate per 100,000 inhabitants"</span>)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co"># X‐axis ticks at 1990, 1995, …, 2020</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1990</span>, <span class="dv">2020</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Remove x‐axis title</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Display it</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>(OpenAI, 2025)</p>
+<p>Here is the first problem</p>
+<p>As we can see, the gray line on the graph made according to the above code is almost attached to the bottom of the graph. I asked Chatgpt, and it said that the gray “immigrant proportion” line is always close to 0. This is because the dual Y axes of ggplot2 are not truly “independently scaled”, but share a set of numerical spaces. hom_w (murder rate) is about 6 to 9, and migr_w (immigrant proportion) is about 0.03 to 0.055. After looking at the graph, I also noticed that the scales on both sides of my graph are 0-8, while the scale on the left side of the author’s graph is 0.035-0.055.</p>
+<p>Then ChatGPT Offered Solution:</p>
+<div id="fig:S2">
+<p><strong>Figure&nbsp;3.</strong><br>
+<em>Soluction for flat gray line</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/S2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+<p>Here I follow the instruction, use y = hom_w / sf when drawing the blue line (equivalent to “compressing” the murder rate to the small interval of the proportion of immigrants), Then use sec_axis(~ . * sf) to “expand” the label on the right back to the true murder rate value. After following the steps of chatgpt, the two lines are in the correct position. Lastly, I corrected the scales on both sides to 0.035-0.055 on the left axis and 6-8.5 on the right axis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results-pdf: "hide"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"DATA/cross_country_data_homicide_migration.dta"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#  Compute population‐weighted time series</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ts <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Weighted average of migrant stock over population</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">migr_w =</span> <span class="fu">sum</span>(migr_pop <span class="sc">*</span> pop1990) <span class="sc">/</span> <span class="fu">sum</span>(pop1990),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Weighted average of homicide rate</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="at">hom_w =</span> <span class="fu">sum</span>(homicide_rate <span class="sc">*</span> pop1990) <span class="sc">/</span> <span class="fu">sum</span>(pop1990)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirm ts were created correctly</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># head(ts)</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># str(ts)</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>sf <span class="ot">&lt;-</span> <span class="fu">max</span>(ts<span class="sc">$</span>hom_w) <span class="sc">/</span> <span class="fu">max</span>(ts<span class="sc">$</span>migr_w)<span class="co"># the correct step</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the right axis scale</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>right_breaks <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">6</span>, <span class="fl">8.5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>left_breaks <span class="ot">&lt;-</span> right_breaks <span class="sc">/</span> sf  <span class="co"># Convert to left axis scale</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># draw the graph</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ts, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> migr_w), <span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> migr_w), <span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> hom_w <span class="sc">/</span> sf), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hom_w <span class="sc">/</span> sf), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="dv">24</span>) <span class="sc">+</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Stock of migrants over population"</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.035</span>, <span class="fl">0.055</span>),</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fl">0.035</span>, <span class="fl">0.055</span>, <span class="at">by =</span> <span class="fl">0.005</span>),</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>      <span class="sc">~</span> . <span class="sc">*</span> sf,</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Homicide rate per 100,000 inhabitants"</span>,</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> right_breaks,</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> right_breaks</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1990</span>, <span class="dv">2020</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>After following the steps of ChatGPT, the two lines are now in the correct position. Lastly, I corrected the scales on both sides to 0.035-0.055 on the left axis and 6-8.5 on the right axis to make it more alike to original one.</p>
+<p>I also noticed that the gray line ended up closer to 8.5, while the original graph looked between 8 and 8.5. I asked ChatGPT and checked three things according to it’s instructions. 1. Did I draw 2020 ? 2. Confirm that migr_pop is a proportion, not a number of people 3. Re-ensure that the weighted average uses the pop1990 column I checked all of them, but the graph did not change. ChatGPT said that it might be that the weighting method in Stata is slightly different from the implementation details in R, or that the original graph was slightly adjusted manually when it was published.(OpenAI, 2025) I remember learning in the course last semester that the key to doing replication is to be able to reproduce the results and trends that the chart wants to present after following the code provided by the author and the same method. In this graph, the direction of the lines is consistent with the changes (immigration increased, murders decreased), and the values are roughly in the same area, with no obvious misalignment or data errors. I think the points where the two lines fall and where they intersect are not significantly different from the original graph, so I believe this is a successful replication.</p>
+<section id="discussion-on-figure-2-top" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-on-figure-2-top">Discussion on Figure 2 top</h2>
+<p>Figure 2 top graph uses United Nations immigration data. I think the author could be more precise on that. Did they use International migrant stock from United Nations data or Total population, or both? At first, I compared the numbers on the data and the website, and found that there was a slight difference between the total population on the website and the file provided by the author. For example, the total population of Australia in 1990 was 16960.600 in the author’s data and 17126.298 on the website. The total population of Armenia in 1990 was 3538.164, and 3552.128 on the website. I thought that this might be because the data on the website had been updated. If the difference was not big, I thought the data provided by the author was credible, so I directly used the author’s data for replication. Later, I further wanted to confirm where the number of migr_pop in the author’s file came from, but I couldn’t calculate a similar number. Finally, I realized the problem is that I downloaded the latest version of the data, and the author used the 2020 version. The latest version is Armenia 1990 Total population at mid-year 3552.128, migrant stock 433541. The version used by the author, Armenia 1990 Total population at mid-year 3538.164, migrant stock has been updated a lot, which led to my calculation of 433541/3552.128 ≈0.1225, not ≈0.186. Another issue was the numbers for migrant stock are missing from the file provided by the authors; it has only the author’s own calculation of migr_pop 0.186195165. I think the author’s readme file can include the file year used and how migr_pop is calculated. This can improve the overall transparency and credibility of the research and reduce disputes over errors caused by different versions.</p>
+</section>
+</section>
+<section id="figure-2-bottom-replication-process" class="level1">
+<h1>Figure 2 Bottom Replication Process</h1>
+<p>The bottom plot is the logarithmic change scatter plot + weighted regression line for 1990 vs.&nbsp;2019. X axis: log change migration, Y axis: log change homicides.</p>
+<div id="fig:statabottom">
+<p><strong>Figure&nbsp;4.</strong><br>
+<em>the original Stata code for Figure 2 bottom</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/statabottom.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+<p>Same I followed the instructions of ChatGPT to do the steps, first select 1990 and 2019 from the original data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results-pdf: "hide"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">2019</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(code, year, migr_pop, homicide_rate, pop1990)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Use head(df2) to check and confirm that there are only data from 1990 and 2019 then generate ln_migr, ln_homic and pivot_wider</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">ln_migr =</span> <span class="fu">log</span>(migr_pop),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="at">ln_homic =</span> <span class="fu">log</span>(homicide_rate)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> <span class="co">#Add two new columns, the logarithm of the immigration ratio and the homicide rate.</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(code, year, ln_migr, ln_homic, pop1990) <span class="sc">%&gt;%</span> <span class="co">#Keep code, year, ln_migr, ln_homic, pop1990</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="at">names_from =</span> year,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="at">values_from =</span> <span class="fu">c</span>(ln_migr, ln_homic),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="at">names_sep =</span> <span class="st">"_"</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>) <span class="co"># Split year (1990/2019) into ln_migr_1990, ln_migr_2019, ln_homic_1990, ln_homic_2019</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Use head(df3) str(df3) to confirm that the column names are consistent with expectations</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>df4 <span class="ot">&lt;-</span> df3 <span class="sc">%&gt;%</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="at">dln_migr =</span> ln_migr_2019 <span class="sc">-</span> ln_migr_1990,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="at">dln_homic =</span> ln_homic_2019 <span class="sc">-</span> ln_homic_1990</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>) <span class="co">#Continue to calculate logarithmic difference</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  code  pop1990 ln_migr_1990 ln_migr_2019 ln_homic_1990 ln_homic_2019
+  &lt;chr&gt;   &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 ARM     3538.        -1.68        -2.74         1.62         0.525 
+2 AUS    16961.        -1.46        -1.21         0.793       -0.117 
+3 AUT     7724.        -2.28        -1.62         0.140       -0.0305
+4 AZE     7243.        -3.00        -3.68         1.51         0.788 
+5 BLR    10151.        -2.10        -2.18         1.61         0.871 
+6 BIH     4463.        -4.38        -4.53         0.495        0.157 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df3) <span class="co"># Confirm that there are the following columns (and they are all numeric): code, pop1990, ln_migr_1990, ln_migr_2019, n_homic_1990, ln_homic_2019</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [55 × 6] (S3: tbl_df/tbl/data.frame)
+ $ code         : chr [1:55] "ARM" "AUS" "AUT" "AZE" ...
+  ..- attr(*, "label")= chr "code"
+  ..- attr(*, "format.stata")= chr "%9s"
+ $ pop1990      : num [1:55] 3538 16961 7724 7243 10151 ...
+  ..- attr(*, "format.stata")= chr "%9.0g"
+ $ ln_migr_1990 : num [1:55] -1.68 -1.46 -2.28 -3 -2.1 ...
+  ..- attr(*, "format.stata")= chr "%9.0g"
+ $ ln_migr_2019 : num [1:55] -2.74 -1.21 -1.62 -3.68 -2.18 ...
+  ..- attr(*, "format.stata")= chr "%9.0g"
+ $ ln_homic_1990: num [1:55] 1.615 0.793 0.14 1.513 1.609 ...
+  ..- attr(*, "label")= chr "homicide_rate"
+  ..- attr(*, "format.stata")= chr "%10.0g"
+ $ ln_homic_2019: num [1:55] 0.5247 -0.1165 -0.0305 0.7885 0.8713 ...
+  ..- attr(*, "label")= chr "homicide_rate"
+  ..- attr(*, "format.stata")= chr "%10.0g"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df4 <span class="ot">&lt;-</span> df3 <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">dln_migr =</span> ln_migr_2019 <span class="sc">-</span> ln_migr_1990,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">dln_homic =</span> ln_homic_2019 <span class="sc">-</span> ln_homic_1990) <span class="co">#Calculate logarithmic difference and generate df4</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># head(df4)</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># str(df4) #df4 should have two more columns dln_migr and dln_homic, respectively Logarithmic change from 1990→2019</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># drawing the graph</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df4, <span class="fu">aes</span>(<span class="at">x =</span> dln_migr, <span class="at">y =</span> dln_homic, <span class="at">weight =</span> pop1990)) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> code), <span class="at">linewidth =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="at">title =</span> <span class="st">"Immigration and homicides (pop. weighted)"</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="at">x =</span> <span class="st">"log change migration, 1990–2019"</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="st">"log change homicides, 1990–2019"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_text_repel(aes(label = code), linewidth = 3): Ignoring unknown
+parameters: `linewidth`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It looks very similar to the original image, and then I adjusted the scale.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results-pdf: "hide"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df4, <span class="fu">aes</span>(</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x      =</span> dln_migr,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y      =</span> dln_homic,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">weight =</span> pop1990</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> code), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">segment.size =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(             <span class="co"># Change the x-axis to -4…4 Each scale interval is 2 degrees</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(             <span class="co"># Change the y-axis to -2…2 Each scale interval is 1 degree</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">38</span>) <span class="sc">+</span> <span class="co"># Font size adjustment</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"grey90"</span>, <span class="at">linewidth =</span> .<span class="dv">3</span>),</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Log change migration, 1990–2019"</span>,</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Log change homicides, 1990–2019"</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_text_repel()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Lastly, I use the code theme_minimal(base_size = 38) for the font size adjustment. I think this graph shares the same idea that the author wants to present in the paper. There is a nearly horizontal regression line, and most countries are concentrated between -1 and 1 on the X axis. This means that the proportion of immigrants and the murder rate in most countries have not experienced a huge change. If more immigrants lead to higher crime, there will be a cluster in the upper right corner of the graph. However, the graph shows that there is no consistent trend or causal relationship between changes in immigration and changes in murder rates.</p>
+</section>
+<section id="using-world-bank-population-data-as-weight" class="level1">
+<h1>Using World Bank population data as weight</h1>
+<p>Because the group before us had some data generation problems, they didn’t seem to use the data used by the author, but the graph was produced. The professor said that their data might be generated by ChatGPT itself, and then said that they could go to the World Bank to find the data they needed. At that time, I thought I had to use the World Bank data, so I used the World Bank data to make the second graph. But I didn’t give ChatGPT instructions clear enough; I just said that I wanted to use the World Bank population data to make a new graph.So ChatGPT gave me the code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results-pdf: "hide"</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(countrycode)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># First pull out the required ISO3 list</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>iso3c_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ARM"</span>,<span class="st">"AUS"</span>,<span class="st">"AUT"</span>,<span class="st">"AZE"</span>,<span class="st">"BGR"</span>,<span class="st">"BIH"</span>,<span class="st">"BLR"</span>,<span class="st">"BRA"</span>,<span class="st">"CAN"</span>,<span class="st">"CHE"</span>,<span class="st">"COL"</span>,<span class="st">"CRI"</span>,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DEU"</span>,<span class="st">"DNK"</span>,<span class="st">"ECU"</span>,<span class="st">"ESP"</span>,<span class="st">"EST"</span>,<span class="st">"FIN"</span>,<span class="st">"FRA"</span>,<span class="st">"GBR"</span>,<span class="st">"GEO"</span>,<span class="st">"GRC"</span>,<span class="st">"HKG"</span>,<span class="st">"HND"</span>,</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HRV"</span>,<span class="st">"IND"</span>,<span class="st">"IRL"</span>,<span class="st">"ITA"</span>,<span class="st">"JAM"</span>,<span class="st">"JPN"</span>,<span class="st">"KGZ"</span>,<span class="st">"KOR"</span>,<span class="st">"LKA"</span>,<span class="st">"LTU"</span>,<span class="st">"MAR"</span>,<span class="st">"MDA"</span>,</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MEX"</span>,<span class="st">"MUS"</span>,<span class="st">"NLD"</span>,<span class="st">"NOR"</span>,<span class="st">"PAK"</span>,<span class="st">"PAN"</span>,<span class="st">"PHL"</span>,<span class="st">"POL"</span>,<span class="st">"PRI"</span>,<span class="st">"PRT"</span>,<span class="st">"ROU"</span>,<span class="st">"RUS"</span>,</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SGP"</span>,<span class="st">"SVK"</span>,<span class="st">"SVN"</span>,<span class="st">"SWE"</span>,<span class="st">"URY"</span>,<span class="st">"USA"</span>,<span class="st">"VEN"</span>)</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Filter population</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>wb_pop_ts <span class="ot">&lt;-</span> <span class="fu">WDI</span>(</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">country   =</span> <span class="st">"all"</span>,</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicator =</span> <span class="st">"SP.POP.TOTL"</span>,</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">start     =</span> <span class="dv">1990</span>,</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">end       =</span> <span class="dv">2019</span>,</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra     =</span> <span class="cn">TRUE</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(region <span class="sc">!=</span> <span class="st">"Aggregates"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># generate iso3c</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">code =</span> <span class="fu">countrycode</span>(iso2c, <span class="st">"iso2c"</span>, <span class="st">"iso3c"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Keep the select countries</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(code <span class="sc">%in%</span> iso3c_vec) <span class="sc">%&gt;%</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(code, year, <span class="at">pop_total =</span> SP.POP.TOTL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: There was 1 warning in `mutate()`.
+ℹ In argument: `code = countrycode(iso2c, "iso2c", "iso3c")`.
+Caused by warning:
+! Some values were not matched unambiguously: JG, XK</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Combine and calculate weighted indicators</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ts_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(wb_pop_ts, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code"</span>,<span class="st">"year"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">migr_w =</span> <span class="fu">sum</span>(migr_pop <span class="sc">*</span> pop_total, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(pop_total, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">hom_w  =</span> <span class="fu">sum</span>(homicide_rate <span class="sc">*</span> pop_total, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(pop_total, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Calculate proportions and draw</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>sf <span class="ot">&lt;-</span> <span class="fu">max</span>(ts_df<span class="sc">$</span>hom_w) <span class="sc">/</span> <span class="fu">max</span>(ts_df<span class="sc">$</span>migr_w)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ts_df, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> migr_w), <span class="at">color=</span><span class="st">"grey40"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> migr_w), <span class="at">color=</span><span class="st">"grey40"</span>, <span class="at">shape=</span><span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> hom_w <span class="sc">/</span> sf), <span class="at">color=</span><span class="st">"blue"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hom_w <span class="sc">/</span> sf), <span class="at">color=</span><span class="st">"blue"</span>, <span class="at">shape=</span><span class="dv">24</span>) <span class="sc">+</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1990</span>, <span class="dv">2020</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">name      =</span> <span class="st">"Stock of migrants over population"</span>,</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels    =</span> <span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>),</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">sec.axis  =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> . <span class="sc">*</span> sf, <span class="at">name =</span> <span class="st">"Homicide rate per 100,000 inhabitants"</span>)</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The step after merging had mistake</p>
+<div id="fig:M1">
+<p><strong>Figure&nbsp;5</strong><br>
+<em>Mistake using incorrect weights</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/M1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<p>Because I used the total population of all years from 1990 to 2019, what I got was the “weighted average of the population distribution of that year”, which means that the weights change every year. Actually, I don’t need the total population of all years from 1990 to 2019. I only need to replace the 1990 population (pop1990) with World Bank’s data, because the author used only the 1990 population (pop1990) as the weight for all periods.</p>
+<p>Second time, I only used the 1990 population as the weight for the whole period, and I still use the migr_pop calculated by the author as a share.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results-pdf: "hide"</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Pull down the World Bank 1990 total population, named pop1990</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>pop90 <span class="ot">&lt;-</span> <span class="fu">WDI</span>(</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="at">country =</span> iso3c_vec,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="at">indicator =</span> <span class="st">"SP.POP.TOTL"</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="at">start =</span> <span class="dv">1990</span>,</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="at">end =</span> <span class="dv">1990</span>,</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="at">extra =</span> <span class="cn">FALSE</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># WDI will return a column called iso2c, we mutate iso3c directly from it</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="at">iso3c =</span> <span class="fu">countrycode</span>(iso2c, <span class="st">"iso2c"</span>, <span class="st">"iso3c"</span>)</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(iso3c, <span class="at">pop1990 =</span> SP.POP.TOTL)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Read the .dta provided by the author</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"DATA/cross_country_data_homicide_migration.dta"</span>)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Use the pop1990 pulled down by WDI to **overwrite** the pop1990 in the original file</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(<span class="at">iso3c =</span> code) <span class="sc">%&gt;%</span> <span class="co"># Make sure it is consistent with pop90</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="sc">-</span>pop1990) <span class="sc">%&gt;%</span> <span class="co"># Delete the original pop1990</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(pop90, <span class="at">by =</span> <span class="st">"iso3c"</span>) <span class="co"># Add back the new pop1990</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Use the new pop1990 to do population weighted aggregation</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>ts_df <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(year <span class="sc">&lt;=</span> <span class="dv">2019</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="at">migr_w =</span> <span class="fu">sum</span>(migr_pop <span class="sc">*</span> pop1990, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(pop1990, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a><span class="at">hom_w =</span> <span class="fu">sum</span>(homicide_rate <span class="sc">*</span> pop1990, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(pop1990, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>sf <span class="ot">&lt;-</span> <span class="fu">max</span>(ts<span class="sc">$</span>hom_w) <span class="sc">/</span> <span class="fu">max</span>(ts<span class="sc">$</span>migr_w)</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the right axis scale</span></span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>right_breaks <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">6</span>, <span class="fl">8.5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>left_breaks <span class="ot">&lt;-</span> right_breaks <span class="sc">/</span> sf  </span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ts, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> migr_w), <span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> migr_w), <span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> hom_w <span class="sc">/</span> sf), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> hom_w <span class="sc">/</span> sf), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="dv">24</span>) <span class="sc">+</span></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Stock of migrants over population"</span>,</span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.035</span>, <span class="fl">0.055</span>),</span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fl">0.035</span>, <span class="fl">0.055</span>, <span class="at">by =</span> <span class="fl">0.005</span>),</span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(</span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>      <span class="sc">~</span> . <span class="sc">*</span> sf,</span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Homicide rate per 100,000 inhabitants"</span>,</span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> right_breaks,</span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> right_breaks</span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1990</span>, <span class="dv">2020</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="discussion-of-using-the-data-from-the-world-bank-incorrectly" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-of-using-the-data-from-the-world-bank-incorrectly">Discussion of using the data from the World Bank incorrectly</h2>
+<p>This graph looks very different from the last graph with mistakes, and doesn’t look significantly different from the first time I used the data provided by the author.</p>
+<p>This time, I used the data from the World Bank incorrectly and didn’t notice it at all. I intuitively thought that the graph looked different only because I used the data from the World Bank. This caused me to be embarrassed during my oral presentation.</p>
+</section>
+<section id="problems-with-making-a-scatter-plot-at-the-bottom" class="level2">
+<h2 class="anchored" data-anchor-id="problems-with-making-a-scatter-plot-at-the-bottom">Problems with making a scatter plot at the bottom</h2>
+<p>I also tried to make the bottom plot using the data from the World Bank, but the problem I had was scatter plots did not appear.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results-pdf: "hide"</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary packages</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(countrycode)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) As long as these 55 countries</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>iso3_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="st">"ARM"</span>,<span class="st">"AUS"</span>,<span class="st">"AUT"</span>,<span class="st">"AZE"</span>,<span class="st">"BGR"</span>,<span class="st">"BIH"</span>,<span class="st">"BLR"</span>,<span class="st">"BRA"</span>,<span class="st">"CAN"</span>,<span class="st">"CHE"</span>,<span class="st">"COL"</span>,<span class="st">"CRI"</span>,</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="st">"DEU"</span>,<span class="st">"DNK"</span>,<span class="st">"ECU"</span>,<span class="st">"ESP"</span>,<span class="st">"EST"</span>,<span class="st">"FIN"</span>,<span class="st">"FRA"</span>,<span class="st">"GBR"</span>,<span class="st">"GEO"</span>,<span class="st">"GRC"</span>,<span class="st">"HKG"</span>,<span class="st">"HND"</span>,</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="st">"HRV"</span>,<span class="st">"IND"</span>,<span class="st">"IRL"</span>,<span class="st">"ITA"</span>,<span class="st">"JAM"</span>,<span class="st">"JPN"</span>,<span class="st">"KGZ"</span>,<span class="st">"KOR"</span>,<span class="st">"LKA"</span>,<span class="st">"LTU"</span>,<span class="st">"MAR"</span>,<span class="st">"MDA"</span>,</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="st">"MEX"</span>,<span class="st">"MUS"</span>,<span class="st">"NLD"</span>,<span class="st">"NOR"</span>,<span class="st">"PAK"</span>,<span class="st">"PAN"</span>,<span class="st">"PHL"</span>,<span class="st">"POL"</span>,<span class="st">"PRI"</span>,<span class="st">"PRT"</span>,<span class="st">"ROU"</span>,<span class="st">"RUS"</span>,</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="st">"SGP"</span>,<span class="st">"SVK"</span>,<span class="st">"SVN"</span>,<span class="st">"SWE"</span>,<span class="st">"URY"</span>,<span class="st">"USA"</span>,<span class="st">"VEN"</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Filter out 1990 &amp; 2019 from df (the complete data frame you read_dta() before)</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(code <span class="sc">%in%</span> iso3_codes, <span class="co"># Only select these 55 countries</span></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">2019</span>)) <span class="sc">%&gt;%</span> <span class="co"># Only 1990/2019</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="at">ln_migr =</span> <span class="fu">log</span>(migr_pop),</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="at">ln_homic =</span> <span class="fu">log</span>(homicide_rate)</span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Get the total population of the World Bank</span></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="co"># (First grab all years, then join and then pivot)</span></span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>wb_pop <span class="ot">&lt;-</span> <span class="fu">WDI</span>(</span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="at">country =</span> <span class="st">"all"</span>,</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="at">indicator =</span> <span class="st">"SP.POP.TOTL"</span>,</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a><span class="at">start =</span> <span class="dv">1990</span>,</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a><span class="at">end =</span> <span class="dv">2019</span>,</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a><span class="at">extra =</span> <span class="cn">TRUE</span></span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(region <span class="sc">!=</span> <span class="st">"Aggregates"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">code =</span> <span class="fu">countrycode</span>(iso2c, <span class="st">"iso2c"</span>, <span class="st">"iso3c"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(code, year, <span class="at">pop_total =</span> SP.POP.TOTL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: There was 1 warning in `mutate()`.
+ℹ In argument: `code = countrycode(iso2c, "iso2c", "iso3c")`.
+Caused by warning:
+! Some values were not matched unambiguously: JG, XK</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) Merge, widen, calculate log-change</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df_sc <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(wb_pop, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code"</span>,<span class="st">"year"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="at">names_from =</span> year,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="at">values_from =</span> <span class="fu">c</span>(ln_migr, ln_homic, pop_total),</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="at">names_sep =</span> <span class="st">"_"</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="at">dln_migr =</span> ln_migr_2019 <span class="sc">-</span> ln_migr_1990,</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="at">dln_homic =</span> ln_homic_2019 <span class="sc">-</span> ln_homic_1990</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(pop_total_1990)) <span class="co"># Only keep those with 1990 population</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5) If you want to confirm how many records there are</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co"># cat("Rows to plot:", nrow(df_sc), "\n")</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 6) Plot</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_sc, <span class="fu">aes</span>(</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="at">x =</span> dln_migr,</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> dln_homic,</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="at">weight =</span> pop_total_1990 <span class="co"># With 1990 Population Weighted</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">+</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">21</span>, <span class="at">fill=</span><span class="cn">NA</span>, <span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>code), <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="at">title =</span> <span class="st">"Immigration and homicides (pop. weighted)"</span>,</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="at">x =</span> <span class="st">"Log change migration, 1990–2019"</span>,</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="st">"Log change homicides, 1990–2019"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 54 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 54 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 54 rows containing missing values or values outside the scale range
+(`geom_text_repel()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I asked ChatGPT why this code can’t make a scatter plot; the plot is blank, there is no dots. At first, it couldn’t find the reason, and ChatGPT kept going around in circles. After hours, I changed the conversation to a new chat room and re-posted the code. It finally works and I just checked it step by step according to its instructions. For example, check whether there are rows in the final data frame, and also check setdiff(unique(df2<span class="math inline">\(code), unique(wb_pop\)</span>code)) See which countries are not in wb_pop.</p>
+<p>Finally, we found the problem, and ChatGPT explained it this way: The problem is in the plot data frame, all rows corresponding to x = dln_migr or y = dln_homic are treated as NA, so ggplot automatically discards them.</p>
+<p>The solution provided from ChatGPT is to keep only the columns I need before pivoting</p>
+<div id="fig:s1">
+<p><strong>Figure&nbsp;6</strong><br>
+<em>Solution for blank scattor plot</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/s1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>(OpenAI, 2025)</p>
+<p>After correcting according to the instructions, the scattered points appeared.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: "asis"</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the package</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(countrycode)</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) select the 55 countries</span></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>iso3_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ARM"</span>,<span class="st">"AUS"</span>,<span class="st">"AUT"</span>,<span class="st">"AZE"</span>,<span class="st">"BGR"</span>,<span class="st">"BIH"</span>,<span class="st">"BLR"</span>,<span class="st">"BRA"</span>,<span class="st">"CAN"</span>,<span class="st">"CHE"</span>,<span class="st">"COL"</span>,<span class="st">"CRI"</span>,</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DEU"</span>,<span class="st">"DNK"</span>,<span class="st">"ECU"</span>,<span class="st">"ESP"</span>,<span class="st">"EST"</span>,<span class="st">"FIN"</span>,<span class="st">"FRA"</span>,<span class="st">"GBR"</span>,<span class="st">"GEO"</span>,<span class="st">"GRC"</span>,<span class="st">"HKG"</span>,<span class="st">"HND"</span>,</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HRV"</span>,<span class="st">"IND"</span>,<span class="st">"IRL"</span>,<span class="st">"ITA"</span>,<span class="st">"JAM"</span>,<span class="st">"JPN"</span>,<span class="st">"KGZ"</span>,<span class="st">"KOR"</span>,<span class="st">"LKA"</span>,<span class="st">"LTU"</span>,<span class="st">"MAR"</span>,<span class="st">"MDA"</span>,</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MEX"</span>,<span class="st">"MUS"</span>,<span class="st">"NLD"</span>,<span class="st">"NOR"</span>,<span class="st">"PAK"</span>,<span class="st">"PAN"</span>,<span class="st">"PHL"</span>,<span class="st">"POL"</span>,<span class="st">"PRI"</span>,<span class="st">"PRT"</span>,<span class="st">"ROU"</span>,<span class="st">"RUS"</span>,</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SGP"</span>,<span class="st">"SVK"</span>,<span class="st">"SVN"</span>,<span class="st">"SWE"</span>,<span class="st">"URY"</span>,<span class="st">"USA"</span>,<span class="st">"VEN"</span></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Filter out 1990 &amp; 2019 from df (the complete data frame read_dta() previously)</span></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(code <span class="sc">%in%</span> iso3_codes,             <span class="co"># filter the 55 countries</span></span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>         year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">2019</span>)) <span class="sc">%&gt;%</span>        <span class="co"># only 1990/2019</span></span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">ln_migr  =</span> <span class="fu">log</span>(migr_pop),</span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">ln_homic =</span> <span class="fu">log</span>(homicide_rate)</span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a><span class="co"># cat("df2 rows:", nrow(df2), "\n")</span></span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a><span class="co"># print(head(df2))</span></span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Get the total population from the World Bank</span></span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a><span class="co"># (first grab all years, then join and then pivot)</span></span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>wb_pop <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>({</span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">WDI</span>(</span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="st">"all"</span>,</span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicator =</span> <span class="st">"SP.POP.TOTL"</span>,</span>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">start =</span> <span class="dv">1990</span>,</span>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">end =</span> <span class="dv">2019</span>,</span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra =</span> <span class="cn">TRUE</span></span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(region <span class="sc">!=</span> <span class="st">"Aggregates"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb27-48"><a href="#cb27-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">code =</span> <span class="fu">countrycode</span>(iso2c, <span class="st">"iso2c"</span>, <span class="st">"iso3c"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-49"><a href="#cb27-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(code, year, <span class="at">pop_total =</span> SP.POP.TOTL)</span>
+<span id="cb27-50"><a href="#cb27-50" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb27-51"><a href="#cb27-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-52"><a href="#cb27-52" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) Merge, widen, and calculate log-change</span></span>
+<span id="cb27-53"><a href="#cb27-53" aria-hidden="true" tabindex="-1"></a>df_sc <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb27-54"><a href="#cb27-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(wb_pop, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code"</span>,<span class="st">"year"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-55"><a href="#cb27-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(code, year, ln_migr, ln_homic, pop_total) <span class="sc">%&gt;%</span>  <span class="co"># ← remove population、homicide_rate、migr_pop </span></span>
+<span id="cb27-56"><a href="#cb27-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb27-57"><a href="#cb27-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from  =</span> year,</span>
+<span id="cb27-58"><a href="#cb27-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="fu">c</span>(ln_migr, ln_homic, pop_total),</span>
+<span id="cb27-59"><a href="#cb27-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_sep   =</span> <span class="st">"_"</span></span>
+<span id="cb27-60"><a href="#cb27-60" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb27-61"><a href="#cb27-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-62"><a href="#cb27-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">dln_migr  =</span> ln_migr_2019  <span class="sc">-</span> ln_migr_1990,</span>
+<span id="cb27-63"><a href="#cb27-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">dln_homic =</span> ln_homic_2019 <span class="sc">-</span> ln_homic_1990</span>
+<span id="cb27-64"><a href="#cb27-64" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb27-65"><a href="#cb27-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb27-66"><a href="#cb27-66" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(pop_total_1990),</span>
+<span id="cb27-67"><a href="#cb27-67" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(dln_migr),</span>
+<span id="cb27-68"><a href="#cb27-68" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(dln_homic)</span>
+<span id="cb27-69"><a href="#cb27-69" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb27-70"><a href="#cb27-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-71"><a href="#cb27-71" aria-hidden="true" tabindex="-1"></a><span class="co"># 5) Check the amount of rows of data</span></span>
+<span id="cb27-72"><a href="#cb27-72" aria-hidden="true" tabindex="-1"></a><span class="co"># cat("Rows to plot:", nrow(df_sc), "\n")</span></span>
+<span id="cb27-73"><a href="#cb27-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-74"><a href="#cb27-74" aria-hidden="true" tabindex="-1"></a>df_tmp <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb27-75"><a href="#cb27-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(wb_pop, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"code"</span>,<span class="st">"year"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-76"><a href="#cb27-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb27-77"><a href="#cb27-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from  =</span> year,</span>
+<span id="cb27-78"><a href="#cb27-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="fu">c</span>(ln_migr, ln_homic, pop_total),</span>
+<span id="cb27-79"><a href="#cb27-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_sep   =</span> <span class="st">"_"</span></span>
+<span id="cb27-80"><a href="#cb27-80" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb27-81"><a href="#cb27-81" aria-hidden="true" tabindex="-1"></a><span class="co"># print(head(df_tmp))# check the rows after pivot</span></span>
+<span id="cb27-82"><a href="#cb27-82" aria-hidden="true" tabindex="-1"></a><span class="co"># cat("Rows after pivot:", nrow(df_tmp), "\n")</span></span>
+<span id="cb27-83"><a href="#cb27-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-84"><a href="#cb27-84" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(df_sc, <span class="fu">summary</span>(dln_migr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+-2.6146 -0.2811  0.2761  0.2960  0.8171  3.1155 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(df_sc, <span class="fu">summary</span>(dln_homic))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-2.27727 -0.88754 -0.59014 -0.45285 -0.04651  1.37231 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressWarnings</span>(</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_sc, <span class="fu">aes</span>(<span class="at">x =</span> dln_migr, <span class="at">y =</span> dln_homic)) <span class="sc">+</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> code), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">se     =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">weight =</span> pop_total_1990)) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Immigration and homicides (pop. weighted)"</span>,</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">x     =</span> <span class="st">"Log change migration, 1990–2019"</span>,</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">y     =</span> <span class="st">"Log change homicides, 1990–2019"</span></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_text_repel()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="figure-4" class="level1">
+<h1>Figure 4</h1>
+<p>Replication Figure 4, titled Summary of Estimates of the Impact of Immigration on Crime attempts to look at the immigration on crime of 4 different countries. It attempts to do this by using a shift share approach to determine whether increases in immigrants correlates with increases in crime. This, however, does only provide casual estimates in these two points. The paper uses two statistical methods in this figure, ordinary least square estimates (OLS) and casual shift share estimates, both with a 95 percent confidence intervals.</p>
+<p>To look at the impact of immigration on crime, the paper does not actually produce its own first-hand data, but rather analyses the data from four other papers which looked at four countries respectively. The countries and respective papers are Italy <span class="citation" data-cites="bianchi2012">(<a href="#ref-bianchi2012" role="doc-biblioref">Bianchi, Buonanno, and Pinotti 2012</a>)</span>, United Kingdom <span class="citation" data-cites="bell2013">(<a href="#ref-bell2013" role="doc-biblioref">Bell, Fasani, and Machin 2013</a>)</span>, United States <span class="citation" data-cites="spenkuch2010">(<a href="#ref-spenkuch2010" role="doc-biblioref">Spenkuch 2010</a>)</span> and Chile <span class="citation" data-cites="ajzenman2020">(<a href="#ref-ajzenman2020" role="doc-biblioref">Ajzenman, Domínguez, and Undurraga 2020</a>)</span>. However, all four papers gather their data with different methods, and therefore, the analysis, and decision of how they the papers analysis these data in down to the authors discretion, which became a problem for the data replication which will be spoken about later.</p>
+<section id="original-figure-4" class="level2">
+<h2 class="anchored" data-anchor-id="original-figure-4">Original Figure 4</h2>
+<p>The original figure 4 is a type of forest plot. It compares both the relationship between immigration and crime looking at both effects on property such as burglary or home owners increasing security and general crime. As said before, because each of the for papers can use different categorisations for what falls under these terms, this are statistical estimations, with the choices of what falls under these categories left to the authors discretion. Forest plots are powerful graphical displays for meta-analyses and systematic reviews as they help summarise and compare the results of multiple scientific studies. The plot helps to visualise the estimated differences between many studies which is most likely why the authors decided to use it here. Furthermore, within each study, the authors were able to compare both the OLS and casual shift shares. However, because these are estimates, this makes it a good candidate to perform a replication study to avoid any biases from the authors affecting their interpretation of their chosen studies results.</p>
+<div id="fig:1">
+<p><strong>Figure&nbsp;7</strong><br>
+<em>Original graph of Figure&nbsp;4</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="replication-of-figure-4-from-the-replication-package" class="level2">
+<h2 class="anchored" data-anchor-id="replication-of-figure-4-from-the-replication-package">Replication of Figure 4 from the Replication Package</h2>
+<p>Initially to confirm the feasibility of replicating the data, before accessing the replication packages of the original four papers to do the complete data replication, it was decided to first replicate the author’s data. Due to the fact that the authors performed their own analysis, it was still necessary to confirm whether the authors correctly produced their figures correctly from the data they provided in their own replication package. Therefore, to confirm figure 4’s accuracy, first it was necessary to reproduce their figure. However, the data used within their replication package was a Stata document rather than a format that could be used directly in R. The Stata file relevant to figure 4 was titled “literature.dta”. The data was first uploaded into the RStudio Cloud workspace for further analyses. Due to the file being a Stata file, there was a two-fold reason for converting the data into an Excel spreadsheet, one for personal sake, and the other due to it not being a native Quatro file format. Therefore it was first necessary to convert the data.</p>
+<p>Fortunately, the steps to convert this file was not difficult with the packages haven, writexl, dplyr and readxl this was achievable. This brings the importance of knowing what the format of the data to be analysed for a replication study is. There are many computer programming languages, with various researchers deciding on what language to use depending on what research they are doing. Fortunately at this time of AI tools, it is much easier to figure out what the best means are to change the data into a format usable y the programming tool you are using. Gemini was also able to suggest the ways to use certain packages to convert the data into a readable format. Initially the packages were downloaded and used to read the data. Then, with writexl, the data was successfully converted into an .xlsx file with the same “literature” name.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"pacman"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(haven, writexl, dplyr, readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"literature.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(my_data, <span class="st">"literature.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Excel file</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"literature.xlsx"</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only the specified columns</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>df_selected <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Paper_long, Country, Group, Coef, C_low, C_high)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># View the result</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_selected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  Paper_long                      Country Group         Coef   C_low C_high
+  &lt;chr&gt;                           &lt;chr&gt;   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+1 Bianchi Buonanno &amp; Pinotti 2012 ITA     Immigration  0.046 -0.248   0.34 
+2 Bianchi Buonanno &amp; Pinotti 2012 ITA     Immigration  0.084  0.0291  0.139
+3 Bianchi Buonanno &amp; Pinotti 2012 ITA     Immigration  0.003 -0.162   0.168
+4 Bianchi Buonanno &amp; Pinotti 2012 ITA     Immigration -0.036 -0.313   0.241
+5 Bell Fasani &amp; Machin 2013       UK      Immigration -0.386 -0.545  -0.227
+6 Bell Fasani &amp; Machin 2013       UK      Immigration -0.061 -0.11   -0.012</code></pre>
+</div>
+</div>
+<div id="fig:2">
+<p><strong>Figure&nbsp;8.</strong><br>
+<em>Table of the Stata File Titled literature</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/2.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<p>Image of the Stata File Titled literature.</p>
+<p>Once this was done an .xlsx file was created, it was then necessary to find out which data within the table were used to create the figure. Due to the data in the .xlsx file not being too large, it was decided to first look at the data within the spreadsheet to determine whether it was possible to understand it, or whether it was best to use Quatro to parse the information as to what may or may not be relevant as compared to the figure.</p>
+<p>Due to this data being pre-analysed by the authors, it was not necessary to make any changes to it. Due to this just being a confirmation that the authors correctly converted their data into a figure, it was not necessary to worry as to whether the data needed any analyses, or just to look for the same numbers and labels which were shown in the figure the authors presented in their paper. For the figure it was determined that the data used were Coef for the estimated value, and C_low for the lower boundary and C_high for the upper boundary. These, including other necessary values were decided were the only values necessary to be kept from the table. The information as to how these labels corresponded to what was shown in the figure was determined bu matching the numbers seen in the table to the figure. However, C_low and C_high are pretty self-explanatory, but the fact that the authors decided to use the label Coef for the estimate could have caused confusion if the number didn’t match. This is another example of why replication studies could be difficult as authors may use their own labels in their replication packages which could cause difficulties when trying to replicate other studies results.</p>
+<p>To do this, the select function was used. Gemini recommended changing the name of the data that was selected from the literature file as “data_for_the_plot” most likely to avoid any confusion as to which data is which. While only selected data was successfully taken from the table, it was not organised in the best way to create the figure. Therefore, the tribble function was used to reorganise the data. The tribble function is a part of the tibble package (which it itself is a part of the tidyverse ecosystem). This meant that installing the tidyverse package would include them both. The tribble function would allow the data to be organised in a row-wise figuration instead of columns. Once this was successfully done, a step by step process using Gemini was used to recreate the original figure as closely as possible.</p>
+<p>Next, the data was organised in such a way that would particularly fit the structure and design of the forest plot; # Ensure ‘Study’ is ordered correctly for plotting data_for_plot<span class="math inline">\(Study &lt;- factor(data_for_plot\)</span>Study, levels = c(“ADU, 2021nChile”, “SPE, 2014nUnited States”, “BFM, 2013nUnited Kingdom”, “BBP, 2012nItaly”)) There was some difficulty in getting everything to align the way the figure looked in the paper, so Gemini recommended dodging the data in such a way that everything aligned well; # Define a common dodging position to slightly offset the lines vertically dodge_pos &lt;- position_dodge(width = -0.4) # Negative width to put OLS above Shift Share.</p>
+<p>Finally, with the assistance of Gemini matching the design to the original figure, the design, colours and set up were created using ggplot. Some tweaking was needed to be performed before these values were achieved to get the data points to align correctly; # Use facetted_pos_scales from ggh4x to set different x-axis scales per facet facetted_pos_scales( x = list( Category == “Property” ~ scale_x_continuous( limits = c(-0.6, 0.4), breaks = seq(-0.6, 0.4, by = 0.2), labels = scales::number_format(accuracy = 0.1) ), Category == “Violent” ~ scale_x_continuous( limits = c(-0.4, 0.4), breaks = seq(-0.4, 0.4, by = 0.2), labels = scales::number_format(accuracy = 0.1) ) ) ) + A very closely matching figure was created, which essentially was the same as the authors had created. It can be said with great confident that the author’s figure matches the data within their replication package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning-html: false</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| include-pdf: false</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo-html: true</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: "asis"</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary package</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Tidyverse Includes ggplot2, dplyr, etc.</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"pacman"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(haven, dplyr, tidyr, ggplot2, scales, ggrepel, patchwork, tidyverse, ggh4x)</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the data </span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>data_for_plot <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Study, <span class="sc">~</span>Type, <span class="sc">~</span>Category, <span class="sc">~</span>Estimate, <span class="sc">~</span>LowerCI, <span class="sc">~</span>UpperCI,</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BBP, 2012</span><span class="sc">\n</span><span class="st">Italy"</span>, <span class="st">"OLS"</span>, <span class="st">"Property"</span>, <span class="fl">0.084</span>, <span class="fl">0.02912</span>, <span class="fl">0.13888</span>,</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BBP, 2012</span><span class="sc">\n</span><span class="st">Italy"</span>, <span class="st">"Shift share"</span>, <span class="st">"Property"</span>, <span class="fl">0.046</span>, <span class="sc">-</span><span class="fl">0.248</span>, <span class="fl">0.34</span>,</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BFM, 2013</span><span class="sc">\n</span><span class="st">United Kingdom"</span>, <span class="st">"OLS"</span>, <span class="st">"Property"</span>, <span class="sc">-</span><span class="fl">0.061</span>, <span class="sc">-</span><span class="fl">0.125</span>, <span class="fl">0.003</span>,</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BFM, 2013</span><span class="sc">\n</span><span class="st">United Kingdom"</span>, <span class="st">"Shift share"</span>, <span class="st">"Property"</span>, <span class="sc">-</span><span class="fl">0.386</span>, <span class="sc">-</span><span class="fl">0.54476</span>, <span class="sc">-</span><span class="fl">0.22724</span>,</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SPE, 2014</span><span class="sc">\n</span><span class="st">United States"</span>, <span class="st">"OLS"</span>, <span class="st">"Property"</span>, <span class="fl">0.123</span>, <span class="fl">0.00344</span>, <span class="fl">0.24256</span>,</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SPE, 2014</span><span class="sc">\n</span><span class="st">United States"</span>, <span class="st">"Shift share"</span>, <span class="st">"Property"</span>, <span class="fl">0.108</span>, <span class="sc">-</span><span class="fl">0.13112</span>, <span class="fl">0.34712</span>,</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ADU, 2021</span><span class="sc">\n</span><span class="st">Chile"</span>, <span class="st">"OLS"</span>, <span class="st">"Property"</span>, <span class="fl">0.01</span>, <span class="sc">-</span><span class="fl">0.0096</span>, <span class="fl">0.0296</span>,</span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ADU, 2021</span><span class="sc">\n</span><span class="st">Chile"</span>, <span class="st">"Shift share"</span>, <span class="st">"Property"</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.0784</span>, <span class="fl">0.0784</span>,</span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BBP, 2012</span><span class="sc">\n</span><span class="st">Italy"</span>, <span class="st">"OLS"</span>, <span class="st">"Violent"</span>, <span class="fl">0.003</span>, <span class="sc">-</span><span class="fl">0.16164</span>, <span class="fl">0.16764</span>,</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BBP, 2012</span><span class="sc">\n</span><span class="st">Italy"</span>, <span class="st">"Shift share"</span>, <span class="st">"Violent"</span>, <span class="sc">-</span><span class="fl">0.036</span>, <span class="sc">-</span><span class="fl">0.312556</span>, <span class="fl">0.240556</span>,</span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BFM, 2013</span><span class="sc">\n</span><span class="st">United Kingdom"</span>, <span class="st">"OLS"</span>, <span class="st">"Violent"</span>, <span class="sc">-</span><span class="fl">0.007</span>, <span class="sc">-</span><span class="fl">0.0364</span>, <span class="fl">0.0224</span>,</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BFM, 2013</span><span class="sc">\n</span><span class="st">United Kingdom"</span>, <span class="st">"Shift share"</span>, <span class="st">"Violent"</span>, <span class="sc">-</span><span class="fl">0.074</span>, <span class="sc">-</span><span class="fl">0.26216</span>, <span class="fl">0.11416</span>,</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SPE, 2014</span><span class="sc">\n</span><span class="st">United States"</span>, <span class="st">"OLS"</span>, <span class="st">"Violent"</span>, <span class="fl">0.065</span>, <span class="sc">-</span><span class="fl">0.05848</span>, <span class="fl">0.18848</span>,</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SPE, 2014</span><span class="sc">\n</span><span class="st">United States"</span>, <span class="st">"Shift share"</span>, <span class="st">"Violent"</span>, <span class="fl">0.01</span>, <span class="sc">-</span><span class="fl">0.29184</span>, <span class="fl">0.31184</span>,</span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ADU, 2021</span><span class="sc">\n</span><span class="st">Chile"</span>, <span class="st">"OLS"</span>, <span class="st">"Violent"</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="fl">0.0196</span>, <span class="fl">0.0196</span>,</span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ADU, 2021</span><span class="sc">\n</span><span class="st">Chile"</span>, <span class="st">"Shift share"</span>, <span class="st">"Violent"</span>, <span class="fl">0.02</span>, <span class="sc">-</span><span class="fl">0.0192</span>, <span class="fl">0.0592</span></span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure 'Study' is ordered correctly for plotting</span></span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>data_for_plot<span class="sc">$</span>Study <span class="ot">&lt;-</span> <span class="fu">factor</span>(data_for_plot<span class="sc">$</span>Study,</span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"ADU, 2021</span><span class="sc">\n</span><span class="st">Chile"</span>,</span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"SPE, 2014</span><span class="sc">\n</span><span class="st">United States"</span>,</span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"BFM, 2013</span><span class="sc">\n</span><span class="st">United Kingdom"</span>,</span>
+<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"BBP, 2012</span><span class="sc">\n</span><span class="st">Italy"</span>))</span>
+<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure 'Type' is a factor with OLS ordered before Shift share for dodging control</span></span>
+<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a>data_for_plot<span class="sc">$</span>Type <span class="ot">&lt;-</span> <span class="fu">factor</span>(data_for_plot<span class="sc">$</span>Type,</span>
+<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a>                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"OLS"</span>, <span class="st">"Shift share"</span>))</span>
+<span id="cb41-51"><a href="#cb41-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-52"><a href="#cb41-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a common dodging position to slightly offset the lines vertically</span></span>
+<span id="cb41-53"><a href="#cb41-53" aria-hidden="true" tabindex="-1"></a>dodge_pos <span class="ot">&lt;-</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="sc">-</span><span class="fl">0.4</span>) <span class="co"># Negative width to put OLS above Shift Share</span></span>
+<span id="cb41-54"><a href="#cb41-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-55"><a href="#cb41-55" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_for_plot, <span class="fu">aes</span>(<span class="at">y =</span> Study, <span class="at">x =</span> Estimate, <span class="at">color =</span> Type)) <span class="sc">+</span></span>
+<span id="cb41-56"><a href="#cb41-56" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add horizontal error bars for confidence intervals</span></span>
+<span id="cb41-57"><a href="#cb41-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> LowerCI, <span class="at">xmax =</span> UpperCI, <span class="at">linetype =</span> Type),</span>
+<span id="cb41-58"><a href="#cb41-58" aria-hidden="true" tabindex="-1"></a>                 <span class="at">height =</span> <span class="fl">0.2</span>, <span class="co"># Controls the vertical thickness of the bar</span></span>
+<span id="cb41-59"><a href="#cb41-59" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position =</span> dodge_pos, <span class="co"># Use the defined dodging position</span></span>
+<span id="cb41-60"><a href="#cb41-60" aria-hidden="true" tabindex="-1"></a>                 <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb41-61"><a href="#cb41-61" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add points for the estimates</span></span>
+<span id="cb41-62"><a href="#cb41-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">shape =</span> Type),</span>
+<span id="cb41-63"><a href="#cb41-63" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">2</span>, <span class="co"># Size of the point</span></span>
+<span id="cb41-64"><a href="#cb41-64" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> dodge_pos) <span class="sc">+</span></span>
+<span id="cb41-65"><a href="#cb41-65" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add text labels for estimates</span></span>
+<span id="cb41-66"><a href="#cb41-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="fl">0.001</span>, <span class="at">trim =</span> <span class="cn">TRUE</span>)(Estimate), <span class="co"># &lt;&lt;-- KEY CHANGE</span></span>
+<span id="cb41-67"><a href="#cb41-67" aria-hidden="true" tabindex="-1"></a>                <span class="at">group =</span> Type, <span class="co"># Group by Type for dodging</span></span>
+<span id="cb41-68"><a href="#cb41-68" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Adjust vertical position (vjust) based on Type</span></span>
+<span id="cb41-69"><a href="#cb41-69" aria-hidden="true" tabindex="-1"></a>                <span class="at">vjust =</span> <span class="fu">ifelse</span>(Type <span class="sc">==</span> <span class="st">"OLS"</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="co"># OLS text above, Shift share text below</span></span>
+<span id="cb41-70"><a href="#cb41-70" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb41-71"><a href="#cb41-71" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> dodge_pos, <span class="co"># Apply the same dodge as points/errorbars</span></span>
+<span id="cb41-72"><a href="#cb41-72" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="co"># Center text horizontally on the point</span></span>
+<span id="cb41-73"><a href="#cb41-73" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">3</span>, <span class="co"># Font size for the labels</span></span>
+<span id="cb41-74"><a href="#cb41-74" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="co"># Ensure text is black</span></span>
+<span id="cb41-75"><a href="#cb41-75" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a vertical line at x = 0 (no effect)</span></span>
+<span id="cb41-76"><a href="#cb41-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>, <span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb41-77"><a href="#cb41-77" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Facet by Category (Property vs. Violent) with independent x-axes</span></span>
+<span id="cb41-78"><a href="#cb41-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap2</span>(<span class="sc">~</span> Category, <span class="at">scales =</span> <span class="st">"free_x"</span>, <span class="at">axes =</span> <span class="st">"x"</span>) <span class="sc">+</span></span>
+<span id="cb41-79"><a href="#cb41-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-80"><a href="#cb41-80" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use facetted_pos_scales from ggh4x to set different x-axis scales per facet</span></span>
+<span id="cb41-81"><a href="#cb41-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facetted_pos_scales</span>(</span>
+<span id="cb41-82"><a href="#cb41-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">list</span>(</span>
+<span id="cb41-83"><a href="#cb41-83" aria-hidden="true" tabindex="-1"></a>      Category <span class="sc">==</span> <span class="st">"Property"</span> <span class="sc">~</span> <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb41-84"><a href="#cb41-84" aria-hidden="true" tabindex="-1"></a>        <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.6</span>, <span class="fl">0.4</span>),</span>
+<span id="cb41-85"><a href="#cb41-85" aria-hidden="true" tabindex="-1"></a>        <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.6</span>, <span class="fl">0.4</span>, <span class="at">by =</span> <span class="fl">0.2</span>),</span>
+<span id="cb41-86"><a href="#cb41-86" aria-hidden="true" tabindex="-1"></a>        <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">number_format</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>)</span>
+<span id="cb41-87"><a href="#cb41-87" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb41-88"><a href="#cb41-88" aria-hidden="true" tabindex="-1"></a>      Category <span class="sc">==</span> <span class="st">"Violent"</span> <span class="sc">~</span> <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb41-89"><a href="#cb41-89" aria-hidden="true" tabindex="-1"></a>        <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.4</span>, <span class="fl">0.4</span>),</span>
+<span id="cb41-90"><a href="#cb41-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.4</span>, <span class="fl">0.4</span>, <span class="at">by =</span> <span class="fl">0.2</span>),</span>
+<span id="cb41-91"><a href="#cb41-91" aria-hidden="true" tabindex="-1"></a>        <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">number_format</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>)</span>
+<span id="cb41-92"><a href="#cb41-92" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb41-93"><a href="#cb41-93" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb41-94"><a href="#cb41-94" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb41-95"><a href="#cb41-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-96"><a href="#cb41-96" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Customize scales, labels, and theme</span></span>
+<span id="cb41-97"><a href="#cb41-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"OLS"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Shift share"</span> <span class="ot">=</span> <span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb41-98"><a href="#cb41-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"OLS"</span> <span class="ot">=</span> <span class="st">"black"</span>, <span class="st">"Shift share"</span> <span class="ot">=</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
+<span id="cb41-99"><a href="#cb41-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"OLS"</span> <span class="ot">=</span> <span class="st">"solid"</span>, <span class="st">"Shift share"</span> <span class="ot">=</span> <span class="st">"dotted"</span>)) <span class="sc">+</span></span>
+<span id="cb41-100"><a href="#cb41-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb41-101"><a href="#cb41-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Summary of Estimates of the Impact of Immigration on Crime"</span>,</span>
+<span id="cb41-102"><a href="#cb41-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb41-103"><a href="#cb41-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb41-104"><a href="#cb41-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Type"</span>,</span>
+<span id="cb41-105"><a href="#cb41-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">"Type"</span></span>
+<span id="cb41-106"><a href="#cb41-106" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb41-107"><a href="#cb41-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb41-108"><a href="#cb41-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb41-109"><a href="#cb41-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb41-110"><a href="#cb41-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb41-111"><a href="#cb41-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb41-112"><a href="#cb41-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb41-113"><a href="#cb41-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb41-114"><a href="#cb41-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb41-115"><a href="#cb41-115" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb41-116"><a href="#cb41-116" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb41-117"><a href="#cb41-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">color =</span> <span class="st">"gray80"</span>),</span>
+<span id="cb41-118"><a href="#cb41-118" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb41-119"><a href="#cb41-119" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb41-120"><a href="#cb41-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="st">"cm"</span>)</span>
+<span id="cb41-121"><a href="#cb41-121" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `position_dodge()` requires non-overlapping x intervals.
+`position_dodge()` requires non-overlapping x intervals.
+`position_dodge()` requires non-overlapping x intervals.
+`position_dodge()` requires non-overlapping x intervals.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication-Report_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div>
+<p><strong>Figure&nbsp;9</strong><br>
+<em>Figure Showing the replicated figure</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/3.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<p>The next step was to go to the original four papers, retrieve the original data and then recreate figure 4 again. When choosing the paper and which figures to replicate, it was confirmed that all the papers were available with all their data. However, this is where the largest issue was confronted. Due to each of their papers presenting different types of data and analysing it in own way, as well as the authors of this papers using statistical methods which, as well, were only estimations, this task turned out to be way beyond the scope for this study. As an example, from the data analysed in the Chile paper <span class="citation" data-cites="ajzenman2020">(<a href="#ref-ajzenman2020" role="doc-biblioref">Ajzenman, Domínguez, and Undurraga 2020</a>)</span> showed the methods used to analyse their data (Figure 10). The equations they showed are far beyond the scope that could be reached. Even though it can be seen in Figure that it is very possible that the data does come from the paper, such as there being data for robbery, larceny, burglary and theft, the methods that the Chilean papers used are highly advanced, let alone the analysis used by the authors of this paper. However, as stated previously, this is, in its very nature how forest plots operate. They themselves are used to summarise and meta-analyse more than one study.</p>
+<div>
+<p><strong>Figure&nbsp;10</strong><br>
+<em>Methods and data from</em> <span class="citation" data-cites="ajzenman2020">(<a href="#ref-ajzenman2020" role="doc-biblioref">Ajzenman, Domínguez, and Undurraga 2020</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/4.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/5.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/6.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<p>This should serve as a strong warning that when performing a replication study, one should be able to perform any analyses or methods that any of the papers used. While the author’s own data here was correctly used in creating figure 4, the methods they used in creating the shift share estimates, or even how the primary data was analysed could unfortunately not be understood. If those performing a replication study are not given the exact statistical methods used by the authors, it may even be of importance to contact the original authors to obtain the statistical methods used in each step, then perform them oneself. However, this is definitely does not disregard the importance of replication studies in science. The reproducibility crisis in science is a significant concern, with many studies facing difficulties in replication <span class="citation" data-cites="lobentanzer2020">(<a href="#ref-lobentanzer2020" role="doc-biblioref">Lobentanzer 2020</a>)</span>.</p>
+</section>
+<section id="website-creation" class="level2">
+<h2 class="anchored" data-anchor-id="website-creation">Website Creation</h2>
+<p>Next was decided to create a website to host the findings and progress made in creating the reproduction study. Creating a website with the information obtained from a replication study is a good way to make it publicly available as to the results of the study.</p>
+<p>Initially there was some confusion as how to create a website in RStudio Cloud, as the initial steps seemed to be quite different as to what was seen on the Quarto website guide. However, after some Googling, it was seen that all that needed to be done was to just use R Markdown. It was decided to just use a simple style in the _quarto.yml file as shown below. Then, the figures used in this replication study were separated to try and make a website that had separated parts. Once the index file was created, the following website was made.</p>
+<p>When following the instructions, and rendering the website in RStudio, the website appeared to have come out successfully. Therefore, the information was pushed to GitHub. However, when the website was created and hosted on the GitHub servers, it appeared to be broken. This was due to the index.qmd file not being correctly set at the first position. Instead of -href: index.qmd, it was written as - file: index.qmd. Below is the correct _quarto.yml file that was used to create the website.</p>
+<p>project:</p>
+<p>&nbsp; type: website</p>
+<p>website:</p>
+<p>&nbsp; title: “My Immigration &amp; Crime: An International Perspective”</p>
+<p>&nbsp; page-navigation: true</p>
+<p>&nbsp; sidebar:</p>
+<p>&nbsp;&nbsp;&nbsp; title: Content</p>
+<p>&nbsp;&nbsp;&nbsp; style: ‘docked’</p>
+<p>&nbsp;&nbsp;&nbsp; contents:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: index.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Home</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: introduction.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Introduction</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: fig2a.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Figure 2a Data</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: plot2a.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Figure 2a</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: problems2a.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Problems2a</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: fig2b.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Figure 2b Data</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: plot2b.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Figure 2b</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: problems2b.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Problems2b</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: fig4.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Figure 4 Data</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: plot4.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Figure 4</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: problems4.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Problems4</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - href: conclusion.qmd</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text: Conclusion</p>
+<p>format:</p>
+<p>&nbsp; html:</p>
+<p>&nbsp;&nbsp;&nbsp; theme: cosmo</p>
+<p>&nbsp;&nbsp;&nbsp; css: styles.css</p>
+<p>The creation of the _quarto.yml was assisted with the use of Gemini. While these AI programs certainly can be a great help, it has to be strongly noted that they are not perfect programmers, and should generally be used as assistances as if they introduce an error in your code, of which you are not familiar with, and may not even be sure how to ask them the question for them to fix the problem, you may not be able to resolve it. Having experienced programmers is a better option to resolve the issue.</p>
+<p>When creating the data from R Markdown that will be used to create the website, it is important all information is organised in the exact correct order. Because the files used to reproduce the data for the replication study are in one big file, to make them more presentable on a website, they must be broken up into the individual pages. Separating the code does require careful attention to ensure each pages code still can operate individually. Separating the data (such as text from images and vice versa), also requires the usage of eval=FALSE (to only keep the code, but not the data), and echo=FALSE to only keep the figure the data produces. Performing this allows separate pages allowing for a better flow. The pages therefore created were as follows;</p>
+<p>Home page</p>
+<p>Introduction</p>
+<p>The data for Figure 2a</p>
+<p>Figure 2a</p>
+<p>Problems faced in creating Figure 2a</p>
+<p>The data for Figure 2b</p>
+<p>Problems faced in creating Figure 2b</p>
+<p>Figure 2b</p>
+<p>Problems faced in creating Figure 2b</p>
+<p>The data for Figure 4</p>
+<p>Figure 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Problems faced in creating Figure 4</p>
+<p>Conclusion and References.</p>
+<p>To publish the website, GitHub pages is used as it freely hosts websites of a certain size. The following website was then successfully created;</p>
+<p><a href="https://tjnh-sci.github.io/tjnh-scigithub.io/" class="uri">https://tjnh-sci.github.io/tjnh-scigithub.io/</a>.</p>
+<p>This was achieved by first uploading the respective files that will comprise to a repository. Then going to GitHub Pages and selecting the location of said files. GitHub Pages has the ability to automatically recognise the files, and will then publish the website.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Through this replication process and the professor’s explanation in class, I understand the importance of replication for research. It not only confirms the transparency and credibility of the research, can also checks whether there are errors or artificial manipulation of data in the analysis process. The first time I used all the data provided by the author to make the chart, and only compared the numbers on the website with the file. The second time I used the data from the World Bank, although it was under a misunderstanding of the discussion in class, which resulted in many errors, but on the other hand taught me a lot.</p>
+<p>Honestly, after the presentation, I still don’t know if it makes sense for me to use the data from the World Bank, cause I still use the original calculation of migr_pop by the author. I asked ChatGPT, and its answer was: “If the purpose of your research is just want to see what happens if you use the WDI population as weight, then it makes sense to do so: it can answer a new question: If I use the World Bank’s 1990 population as weight instead, how will the trend of the global immigrant share be fine-tuned? This may also be an interesting robustness check in policy or methodological discussions.” Seeing the answer, I was glad that it was not a waste of time. Although using the World Bank data may not help replicate the graph itself, it’s meaningful to the learning process, and it allowed me to learn how to add the World Bank data in R and use it correctly.</p>
+<p>If I hadn’t taken this class, I would have never thought about learning how to use R or how to write code. I often couldn’t understand what the professor was doing in class, I felt lost in the lecture or I forgott what to do after Professor finished demonstrating. It started changing until I had to make this Replication report. At the beginning I did everything slowly, and when R shows that I had error, I didn’t know what happened. I had to take screenshot and sent it to ChatGPT.Under the guidance of ChatGPT, I was able to create the graph step by step. Although I still made a lot of mistakes like the first time I tried to replicate the graph, I put all the code into the console, and it worked,the graph showed, but I was not able to keep the code for the report. When modifying some part of the code, I also made mistakes such as missing a ) or missing a comma, adding an extra comma, and made an Incorrect data path etc.Some of the mistakes took me a lot of time to figure the problems out and fixed them.Lack of familiarity with R often slows down our progress and was very frustrating.</p>
+<p>After I learnt how to create graphs, I even used R to create more graphs in another group project, which was something I had never expected at the beginning of the semester, and I am proud of my learning process.</p>
+<p>This study study has also shown the importance of taking care in choosing which studies are chosen and the scope of them. This is not only important in replication studies, but will be throughout the thesis.</p>
+<div id="fig:dhl">
+<p><strong>Figure&nbsp;11</strong><br>
+<em>Graph for DHL Project created with R</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/dhl.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="limitations-and-future-directions" class="level1">
+<h1>Limitations and Future Directions</h1>
+<p>The Limitations of this report, we only found data that the author had cleaned up, which contained the migr_pop calculated by the authors. We only compared the total population and murder rate provided by the authors with the numbers on the websites, and did not download the original data of these two catagories and recalculate migr_pop to verify the numbers provided by the authors.</p>
+<p>I think the further direction of this replication study could be to first use the latest version of immigration data on the UN website for Figure 2. As I mentioned earlier, the numbers of migration stock are quite different from the previous version. However, this would involve recalculating migr_pop ourselves. second, other violent crimes can also be included to re-examine the relationship between immigration and crime rates. Third, use the same analysis method to explore different cities in a certain country.</p>
+</section>
+<section id="the-link-to-presentation" class="level1">
+<h1>The link to presentation</h1>
+<p><a href="https://tjnh-sci.github.io/tjnh-scigithub.io/" class="uri">https://tjnh-sci.github.io/tjnh-scigithub.io/</a></p>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<!-- References will auto-populate in the refs div below -->
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ajzenman2020" class="csl-entry" role="listitem">
+Ajzenman, Nicolás, Patricio Domínguez, and Raimundo Undurraga. 2020. <span>“Immigration, Crime, and Crime (Mis)perceptions.”</span> <a href="https://doi.org/10.18235/0002714">https://doi.org/10.18235/0002714</a>.
+</div>
+<div id="ref-bell2013" class="csl-entry" role="listitem">
+Bell, Brian, Francesco Fasani, and Stephen Machin. 2013. <span>“Crime and Immigration: Evidence from Large Immigrant Waves.”</span> <em>The Review of Economics and Statistics</em> 95 (4): 1278–90. <a href="https://doi.org/10.1162/rest_a_00337">https://doi.org/10.1162/rest_a_00337</a>.
+</div>
+<div id="ref-bianchi2012" class="csl-entry" role="listitem">
+Bianchi, Milo, Paolo Buonanno, and Paolo Pinotti. 2012. <span>“Do Immigrants Cause Crime?”</span> <em>Journal of the European Economic Association</em> 10 (6): 1318–47. <a href="https://doi.org/10.1111/j.1542-4774.2012.01085.x">https://doi.org/10.1111/j.1542-4774.2012.01085.x</a>.
+</div>
+<div id="ref-bouter2021a" class="csl-entry" role="listitem">
+Bouter, Lex M., and Gerben ter Riet. 2021. <span>“Replication Research Series-Paper 2 : Empirical Research Must Be Replicated Before Its Findings Can Be Trusted.”</span> <em>Journal of Clinical Epidemiology</em> 129 (January): 188–90. <a href="https://doi.org/10.1016/j.jclinepi.2020.09.032">https://doi.org/10.1016/j.jclinepi.2020.09.032</a>.
+</div>
+<div id="ref-lobentanzer2020" class="csl-entry" role="listitem">
+Lobentanzer, Sebastian. 2020. <span>“Why Most Pre-Published Research Findings Are False.”</span> <a href="http://dx.doi.org/10.31219/osf.io/29jnp">http://dx.doi.org/10.31219/osf.io/29jnp</a>.
+</div>
+<div id="ref-marie2024" class="csl-entry" role="listitem">
+Marie, Olivier, and Paolo Pinotti. 2024. <span>“Immigration and Crime: An International Perspective.”</span> <em>Journal of Economic Perspectives</em> 38 (1): 181–200. <a href="https://doi.org/10.1257/jep.38.1.181">https://doi.org/10.1257/jep.38.1.181</a>.
+</div>
+<div id="ref-spenkuch2010" class="csl-entry" role="listitem">
+Spenkuch, Jörg L. 2010. <span>“Understanding the Impact of Immigration on Crime.”</span> <em>SSRN Electronic Journal</em>. <a href="https://doi.org/10.2139/ssrn.1612849">https://doi.org/10.2139/ssrn.1612849</a>.
+</div>
+</div>
+<p>OpenAI. (2025). ChatGPT [Large language model]. https://chat.openai.com/chat</p>
+</section>
+<section id="apx-a" class="level1">
+<h1>Appendix</h1>
+<div id="fig:checklist">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/checklist.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<p>Yu-Chiao Tseng 21. July. 2025 Cologne Tawanda Nhundu 21. July. 2025 Cologne</p>
+</section>
+</div>
+</section>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
