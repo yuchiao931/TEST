@@ -186,7 +186,6 @@ ChatGPT guided me step by step to reproduce this grpah in R.
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results-pdf: "hide"
 
@@ -300,7 +299,6 @@ the left axis and 6-8.5 on the right axis.
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results-pdf: "hide"
 
@@ -427,7 +425,6 @@ select 1990 and 2019 from the original data
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results-pdf: "hide"
 
@@ -488,7 +485,6 @@ scale.
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results-pdf: "hide"
 
@@ -552,7 +548,6 @@ ChatGPT gave me the code:
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results-pdf: "hide"
 
@@ -640,7 +635,6 @@ share.
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results-pdf: "hide"
 
@@ -729,7 +723,6 @@ but the problem I had was scatter plots did not appear.
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results-pdf: "hide"
 
@@ -838,7 +831,6 @@ appeared.
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results: "asis"
 
@@ -1131,7 +1123,6 @@ replication package.
 #| warning: false
 #| warning-html: false
 #| echo: true
-#| include-pdf: false
 #| echo-html: true
 #| results: "asis"
 
