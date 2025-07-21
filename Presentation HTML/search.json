@@ -1,0 +1,132 @@
+[
+  {
+    "objectID": "plot4.html",
+    "href": "plot4.html",
+    "title": "Immigration and Crime: An International Perspective",
+    "section": "",
+    "text": "Figure 4 Summary of Estimates of the Impact of Immigration on Crime",
+    "crumbs": [
+      "Figure 4"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Immigration and Crime: An International Perspective",
+    "section": "",
+    "text": "Data reproduction of the paper Immigration and Crime: An International Perspective by Tseng and Nhundu",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "introduction.html",
+    "href": "introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Inside the Box: Safety, Health, and Isolation in Prison (Western, 2021)\nImmigration and Crime: An International Perspective (Marie & Pinotti, 2024)\n\nThe first one was written by an author who used R to do most of the work, so the professor suggested that we choose another one.\nThis presentation is an reproducibility project of looking at two graphs from the paper Immigration and Crime: An International Perspective by the authors Olivier Marie and Paolo Pinotti (Marie & Pinotti, 2024).",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#choosing-a-paper",
+    "href": "introduction.html#choosing-a-paper",
+    "title": "Introduction",
+    "section": "",
+    "text": "Inside the Box: Safety, Health, and Isolation in Prison (Western, 2021)\nImmigration and Crime: An International Perspective (Marie & Pinotti, 2024)\n\nThe first one was written by an author who used R to do most of the work, so the professor suggested that we choose another one.\nThis presentation is an reproducibility project of looking at two graphs from the paper Immigration and Crime: An International Perspective by the authors Olivier Marie and Paolo Pinotti (Marie & Pinotti, 2024).",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "fig2a.html",
+    "href": "fig2a.html",
+    "title": "Figure 2",
+    "section": "",
+    "text": "Figure 2 Immigration and Homicides in 55 Countries, 1990–2019\n\niso3c_vec &lt;- c(\n  \"ARM\",\"AUS\",\"AUT\",\"AZE\",\"BGR\",\"BIH\",\"BLR\",\"BRA\",\"CAN\",\"CHE\",\"COL\",\"CRI\",\n  \"DEU\",\"DNK\",\"ECU\",\"ESP\",\"EST\",\"FIN\",\"FRA\",\"GBR\",\"GEO\",\"GRC\",\"HKG\",\"HND\",\n  \"HRV\",\"IND\",\"IRL\",\"ITA\",\"JAM\",\"JPN\",\"KGZ\",\"KOR\",\"LKA\",\"LTU\",\"MAR\",\"MDA\",\n  \"MEX\",\"MUS\",\"NLD\",\"NOR\",\"PAK\",\"PAN\",\"PHL\",\"POL\",\"PRI\",\"PRT\",\"ROU\",\"RUS\",\n  \"SGP\",\"SVK\",\"SVN\",\"SWE\",\"URY\",\"USA\",\"VEN\"\n) \n\n# 1) Filter population\nwb_pop_ts &lt;- WDI(\n    country   = \"all\",\n    indicator = \"SP.POP.TOTL\",\n    start     = 1990,\n    end       = 2019,\n    extra     = TRUE\n  ) %&gt;%\n  filter(region != \"Aggregates\") %&gt;%\n  # generate iso3c\n  mutate(code = countrycode(iso2c, \"iso2c\", \"iso3c\")) %&gt;%\n  # Keep the select countries\n  filter(code %in% iso3c_vec) %&gt;%\n  select(code, year, pop_total = SP.POP.TOTL)\n\n# 2) Combine and calculate weighted indicators\nts_df &lt;- df %&gt;%\n  left_join(wb_pop_ts, by = c(\"code\",\"year\")) %&gt;%\n  group_by(year) %&gt;%\n  summarise(\n    migr_w = sum(migr_pop * pop_total, na.rm = TRUE) / sum(pop_total, na.rm = TRUE),\n    hom_w  = sum(homicide_rate * pop_total, na.rm = TRUE) / sum(pop_total, na.rm = TRUE)\n  )\n\n# 3) Calculate proportions and draw\nsf &lt;- max(ts_df$hom_w) / max(ts_df$migr_w)\n\n\nggplot(ts_df, aes(x = year)) +\n  geom_line(aes(y = migr_w), color=\"grey40\", linewidth=1) +\n  geom_point(aes(y = migr_w), color=\"grey40\", shape=21) +\n  geom_line(aes(y = hom_w / sf), color=\"blue\", linewidth=1) +\n  geom_point(aes(y = hom_w / sf), color=\"blue\", shape=24) +\n  scale_x_continuous(breaks = seq(1990, 2020, 5)) +\n  scale_y_continuous(\n    name      = \"Stock of migrants over population\",\n    labels    = percent_format(accuracy = 0.1),\n    sec.axis  = sec_axis(~ . * sf, name = \"Homicide rate per 100,000 inhabitants\")\n  ) +\n  theme_minimal() +\n  theme(axis.title.x = element_blank())",
+    "crumbs": [
+      "Figure 2a Data"
+    ]
+  },
+  {
+    "objectID": "plot2a.html",
+    "href": "plot2a.html",
+    "title": "Figure 2",
+    "section": "",
+    "text": "Figure 2 Immigration and Homicides in 55 Countries, 1990–2019",
+    "crumbs": [
+      "Figure 2a"
+    ]
+  },
+  {
+    "objectID": "fig2b.html",
+    "href": "fig2b.html",
+    "title": "Figure 2",
+    "section": "",
+    "text": "Figure 2 Immigration and Homicides in 55 Countries, 1990–2019\n\niso3c_vec &lt;- c(\n  \"ARM\",\"AUS\",\"AUT\",\"AZE\",\"BGR\",\"BIH\",\"BLR\",\"BRA\",\"CAN\",\"CHE\",\"COL\",\"CRI\",\n  \"DEU\",\"DNK\",\"ECU\",\"ESP\",\"EST\",\"FIN\",\"FRA\",\"GBR\",\"GEO\",\"GRC\",\"HKG\",\"HND\",\n  \"HRV\",\"IND\",\"IRL\",\"ITA\",\"JAM\",\"JPN\",\"KGZ\",\"KOR\",\"LKA\",\"LTU\",\"MAR\",\"MDA\",\n  \"MEX\",\"MUS\",\"NLD\",\"NOR\",\"PAK\",\"PAN\",\"PHL\",\"POL\",\"PRI\",\"PRT\",\"ROU\",\"RUS\",\n  \"SGP\",\"SVK\",\"SVN\",\"SWE\",\"URY\",\"USA\",\"VEN\"\n) \n\n# 1) Filter population\nwb_pop_ts &lt;- WDI(\n    country   = \"all\",\n    indicator = \"SP.POP.TOTL\",\n    start     = 1990,\n    end       = 2019,\n    extra     = TRUE\n  ) %&gt;%\n  filter(region != \"Aggregates\") %&gt;%\n  # generate iso3c\n  mutate(code = countrycode(iso2c, \"iso2c\", \"iso3c\")) %&gt;%\n  # Keep the select countries\n  filter(code %in% iso3c_vec) %&gt;%\n  select(code, year, pop_total = SP.POP.TOTL)\n\n# 2) Combine and calculate weighted indicators\nts_df &lt;- df %&gt;%\n  left_join(wb_pop_ts, by = c(\"code\",\"year\")) %&gt;%\n  group_by(year) %&gt;%\n  summarise(\n    migr_w = sum(migr_pop * pop_total, na.rm = TRUE) / sum(pop_total, na.rm = TRUE),\n    hom_w  = sum(homicide_rate * pop_total, na.rm = TRUE) / sum(pop_total, na.rm = TRUE)\n  )\n\n# 3) Calculate proportions and draw\nsf &lt;- max(ts_df$hom_w) / max(ts_df$migr_w)\n\n\ndf %&gt;%\n  filter(code %in% iso3c_vec) %&gt;%\n  group_by(year) %&gt;%\n  summarise(n_country = n_distinct(code))\n\n# A tibble: 7 × 2\n   year n_country\n  &lt;dbl&gt;     &lt;int&gt;\n1  1990        55\n2  1995        55\n3  2000        55\n4  2005        55\n5  2010        55\n6  2015        55\n7  2019        55\n\n\n\nwb_pop_ts %&gt;%\n  filter(code==\"USA\", year %in% c(1990, 2000, 2010, 2019))\n\n  code year pop_total\n1  USA 2019 330226227\n2  USA 2010 309378227\n3  USA 2000 282162411\n4  USA 1990 249623000\n\n# These pop_total should be officially\n#   1990 ~ 248 million\n#   2000 ~ 282 million\n#   2010 ~ 309 million\n#   2019 ~ 328 million\n\n(Marie & Pinotti, 2024)\n\n# Install the package\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(ggplot2)\nlibrary(ggrepel)\nlibrary(WDI)\nlibrary(countrycode)\n\n# 1) select the 55 countries\niso3_codes &lt;- c(\n  \"ARM\",\"AUS\",\"AUT\",\"AZE\",\"BGR\",\"BIH\",\"BLR\",\"BRA\",\"CAN\",\"CHE\",\"COL\",\"CRI\",\n  \"DEU\",\"DNK\",\"ECU\",\"ESP\",\"EST\",\"FIN\",\"FRA\",\"GBR\",\"GEO\",\"GRC\",\"HKG\",\"HND\",\n  \"HRV\",\"IND\",\"IRL\",\"ITA\",\"JAM\",\"JPN\",\"KGZ\",\"KOR\",\"LKA\",\"LTU\",\"MAR\",\"MDA\",\n  \"MEX\",\"MUS\",\"NLD\",\"NOR\",\"PAK\",\"PAN\",\"PHL\",\"POL\",\"PRI\",\"PRT\",\"ROU\",\"RUS\",\n  \"SGP\",\"SVK\",\"SVN\",\"SWE\",\"URY\",\"USA\",\"VEN\"\n)\n\n# 2) Filter out 1990 & 2019 from df (the complete data frame read_dta() previously)\ndf2 &lt;- df %&gt;%\n  filter(code %in% iso3_codes,             # filter the 55 countries\n         year %in% c(1990, 2019)) %&gt;%        # only 1990/2019\n  mutate(\n    ln_migr  = log(migr_pop),\n    ln_homic = log(homicide_rate)\n  )\ncat(\"df2 rows:\", nrow(df2), \"\\n\")\n\ndf2 rows: 110 \n\nprint(head(df2))\n\n# A tibble: 6 × 9\n  country code   year population homicide_rate pop1990 migr_pop ln_migr ln_homic\n  &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;\n1 Armenia ARM    1990      3538.          5.03   3538.   0.186    -1.68   1.62  \n2 Armenia ARM    2019      2958.          1.69   3538.   0.0643   -2.74   0.525 \n3 Austra… AUS    2019     25203.          0.89  16961.   0.300    -1.21  -0.117 \n4 Austra… AUS    1990     16961.          2.21  16961.   0.233    -1.46   0.793 \n5 Austria AUT    2019      8955.          0.97   7724.   0.199    -1.62  -0.0305\n6 Austria AUT    1990      7724.          1.15   7724.   0.103    -2.28   0.140 \n\n# 3) Get the total population from the World Bank\n# (first grab all years, then join and then pivot)\nwb_pop &lt;- WDI(\n  country   = \"all\",\n  indicator = \"SP.POP.TOTL\",\n  start     = 1990,\n  end       = 2019,\n  extra     = TRUE\n) %&gt;%\n  filter(region != \"Aggregates\") %&gt;%\n  mutate(code = countrycode(iso2c, \"iso2c\", \"iso3c\")) %&gt;%\n  select(code, year, pop_total = SP.POP.TOTL)\n\n# 4) Merge, widen, and calculate log-change\ndf_sc &lt;- df2 %&gt;%\n  left_join(wb_pop, by = c(\"code\",\"year\")) %&gt;%\n  select(code, year, ln_migr, ln_homic, pop_total) %&gt;%  # ← remove population、homicide_rate、migr_pop \n  pivot_wider(\n    names_from  = year,\n    values_from = c(ln_migr, ln_homic, pop_total),\n    names_sep   = \"_\"\n  ) %&gt;%\n  mutate(\n    dln_migr  = ln_migr_2019  - ln_migr_1990,\n    dln_homic = ln_homic_2019 - ln_homic_1990\n  ) %&gt;%\n  filter(!is.na(pop_total_1990))\n\n\n# 5) Check the amout of rows of data\ncat(\"Rows to plot:\", nrow(df_sc), \"\\n\")\n\nRows to plot: 54 \n\n\n\ndf_tmp &lt;- df2 %&gt;%\n  left_join(wb_pop, by = c(\"code\",\"year\")) %&gt;%\n  pivot_wider(\n    names_from  = year,\n    values_from = c(ln_migr, ln_homic, pop_total),\n    names_sep   = \"_\"\n  )\nprint(head(df_tmp))# check the rows after pivot\n\n# A tibble: 6 × 12\n  country   code  population homicide_rate pop1990 migr_pop ln_migr_1990\n  &lt;chr&gt;     &lt;chr&gt;      &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;\n1 Armenia   ARM        3538.          5.03   3538.   0.186         -1.68\n2 Armenia   ARM        2958.          1.69   3538.   0.0643        NA   \n3 Australia AUS       25203.          0.89  16961.   0.300         NA   \n4 Australia AUS       16961.          2.21  16961.   0.233         -1.46\n5 Austria   AUT        8955.          0.97   7724.   0.199         NA   \n6 Austria   AUT        7724.          1.15   7724.   0.103         -2.28\n# ℹ 5 more variables: ln_migr_2019 &lt;dbl&gt;, ln_homic_1990 &lt;dbl&gt;,\n#   ln_homic_2019 &lt;dbl&gt;, pop_total_1990 &lt;dbl&gt;, pop_total_2019 &lt;dbl&gt;\n\ncat(\"Rows after pivot:\", nrow(df_tmp), \"\\n\")\n\nRows after pivot: 110 \n\n\n\nwith(df_sc, summary(dln_migr))\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n-2.6146 -0.2811  0.2761  0.2960  0.8171  3.1155 \n\nwith(df_sc, summary(dln_homic))\n\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n-2.27727 -0.88754 -0.59014 -0.45285 -0.04651  1.37231 \n\n\n\nlibrary(ggplot2)\nlibrary(ggrepel)\n\nggplot(df_sc, aes(x = dln_migr, y = dln_homic)) +\n  geom_point(shape = 21, fill = NA, color = \"black\") +\n  geom_text_repel(aes(label = code), size = 3) +\n  geom_smooth(method = \"lm\",\n              se     = FALSE,\n              aes(weight = pop_total_1990)) +\n  theme_minimal(base_size = 12) +\n  labs(\n    title = \"Immigration and homicides (pop. weighted)\",\n    x     = \"Log change migration, 1990–2019\",\n    y     = \"Log change homicides, 1990–2019\"\n  )\n\n\n\n\n\nReferences\n\nMarie, O., & Pinotti, P. (2024). Immigration and Crime: An International Perspective. Journal of Economic Perspectives, 38(1), 181–200. https://doi.org/10.1257/jep.38.1.181",
+    "crumbs": [
+      "Figure 2b Data"
+    ]
+  },
+  {
+    "objectID": "plot2b.html",
+    "href": "plot2b.html",
+    "title": "Figure 2",
+    "section": "",
+    "text": "Figure 2 Immigration and Homicides in 55 Countries, 1990–2019",
+    "crumbs": [
+      "Figure 2b"
+    ]
+  },
+  {
+    "objectID": "problems2b.html",
+    "href": "problems2b.html",
+    "title": "Immigration and Crime: An International Perspective",
+    "section": "",
+    "text": "Figure 2. Problem 1\n\n\nThe gray “immigrant proportion” line is always close to 0. This is because the dual Y axes of ggplot2 are not truly “independently scaled”, but share a set of numerical spaces\n\n\n\n\nDefine a scaling parameter, say sf, to scale the murder rate to the range of 0–0.055: Use max(ts\\(hom_w) / max(ts\\)migr_w) to automatically calculate sf sf &lt;- max(ts\\(hom_w) / max(ts\\)migr_w)\nMultiply hom_w by sf in the graph to make it fall in the range of 0–0.055:\n\np1 &lt;- ggplot(ts, aes(x = year)) + geom_line(aes(y = migr_w), color = “grey40”, linewidth = 1) + geom_point(aes(y = migr_w), color = “grey40”, shape = 21) + geom_line(aes(y = hom_w / sf), color = “blue”, linewidth = 1) + geom_point(aes(y = hom_w / sf),color = “blue”, shape = 24) + scale_y_continuous( name = “Stock of migrants over population”, # Use ^ on the right axis to “reverse” the true murder rate sec.axis = sec_axis(~ . * sf, name = “Homicide rate per 100,000 inhabitants”) ) + scale_x_continuous(breaks = seq(1990, 2020, by = 5)) + theme_minimal() + theme(axis.title.x = element_blank()) print(p1) Here we use y = hom_w / sf when drawing the blue line (equivalent to “compressing” the murder rate to the small interval of the proportion of immigrants), Then use sec_axis(~ . * sf) to “expand” the label on the right back to the true murder rate value.\n\n\n\nNo dots on scatter plot\n The problem is in the plot data frame, all rows corresponding to x = dln_migr or y = dln_homic are treated as NA, so ggplot automatically discards them.\n\n\n\nKeep only the columns I need before pivoting\ndf_sc &lt;- df2 %&gt;% left_join(wb_pop, by = c(“code”,“year”)) %&gt;% select(code, year, ln_migr, ln_homic, pop_total) %&gt;% # ← Throw away population, homicide_rate, and migr_pop pivot_wider( names_from = year, values_from = c(ln_migr, ln_homic, pop_total), names_sep = “_” ) %&gt;% mutate( dln_migr = ln_migr_2019 - ln_migr_1990, dln_homic = ln_homic_2019 - ln_homic_1990 ) %&gt;% filter(!is.na(pop_total_1990))\n\n\n\nUnable to center image caption\n\n\n\nOriginal Graph\n\n\n\n\n\nMake a styles.css file and typed figure &gt; figcaption {text-align: center;font-size: 0.8em;} and Reference it in YAML header",
+    "crumbs": [
+      "Problems2b"
+    ]
+  },
+  {
+    "objectID": "problems2b.html#problem-and-solution",
+    "href": "problems2b.html#problem-and-solution",
+    "title": "Immigration and Crime: An International Perspective",
+    "section": "",
+    "text": "Figure 2. Problem 1\n\n\nThe gray “immigrant proportion” line is always close to 0. This is because the dual Y axes of ggplot2 are not truly “independently scaled”, but share a set of numerical spaces\n\n\n\n\nDefine a scaling parameter, say sf, to scale the murder rate to the range of 0–0.055: Use max(ts\\(hom_w) / max(ts\\)migr_w) to automatically calculate sf sf &lt;- max(ts\\(hom_w) / max(ts\\)migr_w)\nMultiply hom_w by sf in the graph to make it fall in the range of 0–0.055:\n\np1 &lt;- ggplot(ts, aes(x = year)) + geom_line(aes(y = migr_w), color = “grey40”, linewidth = 1) + geom_point(aes(y = migr_w), color = “grey40”, shape = 21) + geom_line(aes(y = hom_w / sf), color = “blue”, linewidth = 1) + geom_point(aes(y = hom_w / sf),color = “blue”, shape = 24) + scale_y_continuous( name = “Stock of migrants over population”, # Use ^ on the right axis to “reverse” the true murder rate sec.axis = sec_axis(~ . * sf, name = “Homicide rate per 100,000 inhabitants”) ) + scale_x_continuous(breaks = seq(1990, 2020, by = 5)) + theme_minimal() + theme(axis.title.x = element_blank()) print(p1) Here we use y = hom_w / sf when drawing the blue line (equivalent to “compressing” the murder rate to the small interval of the proportion of immigrants), Then use sec_axis(~ . * sf) to “expand” the label on the right back to the true murder rate value.\n\n\n\nNo dots on scatter plot\n The problem is in the plot data frame, all rows corresponding to x = dln_migr or y = dln_homic are treated as NA, so ggplot automatically discards them.\n\n\n\nKeep only the columns I need before pivoting\ndf_sc &lt;- df2 %&gt;% left_join(wb_pop, by = c(“code”,“year”)) %&gt;% select(code, year, ln_migr, ln_homic, pop_total) %&gt;% # ← Throw away population, homicide_rate, and migr_pop pivot_wider( names_from = year, values_from = c(ln_migr, ln_homic, pop_total), names_sep = “_” ) %&gt;% mutate( dln_migr = ln_migr_2019 - ln_migr_1990, dln_homic = ln_homic_2019 - ln_homic_1990 ) %&gt;% filter(!is.na(pop_total_1990))\n\n\n\nUnable to center image caption\n\n\n\nOriginal Graph\n\n\n\n\n\nMake a styles.css file and typed figure &gt; figcaption {text-align: center;font-size: 0.8em;} and Reference it in YAML header",
+    "crumbs": [
+      "Problems2b"
+    ]
+  },
+  {
+    "objectID": "fig4.html",
+    "href": "fig4.html",
+    "title": "Immigration and Crime: An International Perspective",
+    "section": "",
+    "text": "Figure 4 Summary of Estimates of the Impact of Immigration on Crime\n\n# Load necessary package\n# Tidyverse Includes ggplot2, dplyr, etc.\nif (!requireNamespace(\"pacman\", quietly = TRUE)) install.packages(\"pacman\")\npacman::p_load(haven, dplyr, tidyr, ggplot2, scales, ggrepel, patchwork, tidyverse, ggh4x)\n\n\n# Create the data\n\ndata_for_plot &lt;- tribble(\n  ~Study, ~Type, ~Category, ~Estimate, ~LowerCI, ~UpperCI,\n  \"BBP, 2012\\nItaly\", \"OLS\", \"Property\", 0.084, 0.02912, 0.13888,\n  \"BBP, 2012\\nItaly\", \"Shift share\", \"Property\", 0.046, -0.248, 0.34,\n\n  \"BFM, 2013\\nUnited Kingdom\", \"OLS\", \"Property\", -0.061, -0.125, 0.003,\n  \"BFM, 2013\\nUnited Kingdom\", \"Shift share\", \"Property\", -0.386, -0.54476, -0.22724,\n\n  \"SPE, 2014\\nUnited States\", \"OLS\", \"Property\", 0.123, 0.00344, 0.24256,\n  \"SPE, 2014\\nUnited States\", \"Shift share\", \"Property\", 0.108, -0.13112, 0.34712,\n\n  \"ADU, 2021\\nChile\", \"OLS\", \"Property\", 0.01, -0.0096, 0.0296,\n  \"ADU, 2021\\nChile\", \"Shift share\", \"Property\", 0, -0.0784, 0.0784,\n\n  \"BBP, 2012\\nItaly\", \"OLS\", \"Violent\", 0.003, -0.16164, 0.16764,\n  \"BBP, 2012\\nItaly\", \"Shift share\", \"Violent\", -0.036, -0.312556, 0.240556,\n\n  \"BFM, 2013\\nUnited Kingdom\", \"OLS\", \"Violent\", -0.007, -0.0364, 0.0224,\n  \"BFM, 2013\\nUnited Kingdom\", \"Shift share\", \"Violent\", -0.074, -0.26216, 0.11416,\n\n  \"SPE, 2014\\nUnited States\", \"OLS\", \"Violent\", 0.065, -0.05848, 0.18848,\n  \"SPE, 2014\\nUnited States\", \"Shift share\", \"Violent\", 0.01, -0.29184, 0.31184,\n\n  \"ADU, 2021\\nChile\", \"OLS\", \"Violent\", 0, -0.0196, 0.0196,\n  \"ADU, 2021\\nChile\", \"Shift share\", \"Violent\", 0.02, -0.0192, 0.0592\n)\n\n# Ensure 'Study' is ordered correctly for plotting\ndata_for_plot$Study &lt;- factor(data_for_plot$Study,\n                              levels = c(\"ADU, 2021\\nChile\",\n                                         \"SPE, 2014\\nUnited States\",\n                                         \"BFM, 2013\\nUnited Kingdom\",\n                                         \"BBP, 2012\\nItaly\"))\n\n# Ensure 'Type' is a factor with OLS ordered before Shift share for dodging control\ndata_for_plot$Type &lt;- factor(data_for_plot$Type,\n                             levels = c(\"OLS\", \"Shift share\"))\n\n# Define a common dodging position to slightly offset the lines vertically\ndodge_pos &lt;- position_dodge(width = -0.4) # Negative width to put OLS above Shift Share\n\nggplot(data_for_plot, aes(y = Study, x = Estimate, color = Type)) +\n  # Add horizontal error bars for confidence intervals\n  geom_errorbarh(aes(xmin = LowerCI, xmax = UpperCI, linetype = Type),\n                 height = 0.2, # Controls the vertical thickness of the bar\n                 position = dodge_pos, # Use the defined dodging position\n                 linewidth = 0.5) +\n  # Add points for the estimates\n  geom_point(aes(shape = Type),\n             size = 2, # Size of the point\n             position = dodge_pos) +\n  # Add text labels for estimates\n  geom_text(aes(label = scales::label_number(accuracy = 0.001, trim = TRUE)(Estimate), # &lt;&lt;-- KEY CHANGE\n                group = Type, # Group by Type for dodging\n                # Adjust vertical position (vjust) based on Type\n                vjust = ifelse(Type == \"OLS\", -1, 2) # OLS text above, Shift share text below\n                ),\n            position = dodge_pos, # Apply the same dodge as points/errorbars\n            hjust = 0.5, # Center text horizontally on the point\n            size = 3, # Font size for the labels\n            color = \"black\") + # Ensure text is black\n  # Add a vertical line at x = 0 (no effect)\n  geom_vline(xintercept = 0, linetype = \"solid\", color = \"firebrick\", linewidth = 0.5) +\n  # Facet by Category (Property vs. Violent) with independent x-axes\n  facet_wrap2(~ Category, scales = \"free_x\", axes = \"x\") +\n\n  # Use facetted_pos_scales from ggh4x to set different x-axis scales per facet\n  facetted_pos_scales(\n    x = list(\n      Category == \"Property\" ~ scale_x_continuous(\n        limits = c(-0.6, 0.4),\n        breaks = seq(-0.6, 0.4, by = 0.2),\n        labels = scales::number_format(accuracy = 0.1)\n      ),\n      Category == \"Violent\" ~ scale_x_continuous(\n        limits = c(-0.4, 0.4),\n        breaks = seq(-0.4, 0.4, by = 0.2),\n        labels = scales::number_format(accuracy = 0.1)\n      )\n    )\n  ) +\n\n  # Customize scales, labels, and theme\n  scale_shape_manual(values = c(\"OLS\" = 1, \"Shift share\" = 4)) +\n  scale_color_manual(values = c(\"OLS\" = \"black\", \"Shift share\" = \"black\")) +\n  scale_linetype_manual(values = c(\"OLS\" = \"solid\", \"Shift share\" = \"dotted\")) +\n  labs(\n    title = \"Summary of Estimates of the Impact of Immigration on Crime\",\n    y = NULL,\n    x = NULL,\n    color = \"Type\",\n    shape = \"Type\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(hjust = 0.5, size = 14, face = \"bold\"),\n    axis.text.y = element_text(size = 9),\n    axis.text.x = element_text(size = 9),\n    legend.position = \"bottom\",\n    legend.title = element_blank(),\n    legend.text = element_text(size = 10),\n    panel.grid.major.y = element_blank(),\n    panel.grid.minor.y = element_blank(),\n    panel.grid.major.x = element_line(linetype = \"dotted\", color = \"gray80\"),\n    panel.grid.minor.x = element_blank(),\n    strip.text = element_text(size = 12, face = \"bold\"),\n    plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), \"cm\")\n  )",
+    "crumbs": [
+      "Figure 4 Data"
+    ]
+  },
+  {
+    "objectID": "problems4.html",
+    "href": "problems4.html",
+    "title": "Immigration and Crime: An International Perspective",
+    "section": "",
+    "text": "#Figure 2 Immigration and Homicides in 55 Countries, 1990–2019\nΔYm,2017−2008​=βΔmigrm,2017−2008​+γϵmt​\nΔmigrm, 2017−2008​=∑n​θm,2008n​×ΔlnMIGR2017−2008n​\nθm,2008n​=∑n′​MIGRm,2008n′​MIGRm,2008n​​\nSome times more complicated graphs are not a good idea to replicate\nEnsure that the authors even make it possible for most people to replicate",
+    "crumbs": [
+      "Problems4"
+    ]
+  },
+  {
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "Immigration and Crime: An International Perspective",
+    "section": "",
+    "text": "(Marie & Pinotti, 2024) (Western, 2021) (Bell et al., 2013) (Spenkuch, 2013) (Ajzenman et al., 2023)\n\n\n\n\n\nReferences\n\nAjzenman, N., Dominguez, P., & Undurraga, R. (2023). Immigration, Crime, and Crime (Mis)Perceptions. American Economic Journal: Applied Economics, 15(4), 142–176. https://doi.org/10.1257/app.20210156\n\n\nBell, B., Fasani, F., & Machin, S. (2013). Crime and Immigration: Evidence from Large Immigrant Waves. The Review of Economics and Statistics, 95(4), 1278–1290. https://doi.org/10.1162/rest_a_00337\n\n\nMarie, O., & Pinotti, P. (2024). Immigration and Crime: An International Perspective. Journal of Economic Perspectives, 38(1), 181–200. https://doi.org/10.1257/jep.38.1.181\n\n\nSpenkuch, J. L. (2013). Understanding the Impact of Immigration on Crime. American Law and Economics Review, 16(1), 177–219. https://doi.org/10.1093/aler/aht017\n\n\nWestern, B. (2021). Inside the Box: Safety, Health, and Isolation in Prison. Journal of Economic Perspectives, 35(4), 97–122. https://doi.org/10.1257/jep.35.4.97",
+    "crumbs": [
+      "Conclusion"
+    ]
+  }
+]
